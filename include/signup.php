@@ -92,6 +92,18 @@
                     </div>
                 </div>
             </div>
+            <div class="field">
+                <label>Email</label>
+                <input type="email" placeholder="Example@domain.com">
+            </div>
+            <div class="field">
+                <label>Password</label>
+                <input type="password">
+            </div>
+            <div class="field">
+                <label>Confirm Password</label>
+                <input type="password">
+            </div>
             <h4 class="ui dividing header">Billing Information</h4>
             <div class="field">
                 <label>Card Type</label>

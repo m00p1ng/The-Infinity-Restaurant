@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <img src="http://placehold.it/200x150">
+                            <img src="http://cdn.lifebuzz.com/images/122569/lifebuzz-16bd4438698d114353cea4d49f5dbbf8-limit_2000.jpg">
                         </div>
 
                         <div class="content">
@@ -115,7 +115,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <img src="http://placehold.it/200x150">
+                            <img src="http://www.browniebites.net/photos/2012/dogs/apple-carrot-dog-treats-recipes-6.jpg">
                         </div>
 
                         <div class="content">
@@ -137,7 +137,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <img src="http://placehold.it/200x150">
+                            <img src="http://dog-lovers.co.uk/wp-content/uploads/2016/02/morguefile-dog-glasses.jpg">
                         </div>
 
                         <div class="content">
