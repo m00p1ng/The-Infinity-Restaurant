@@ -5,6 +5,5 @@
     <script src="js/jquery.js"></script>
     <script src="js/semantic.min.js"></script>
     <script src="js/shop.js"></script>
-
-    <title></title>
+    <title>My Restaurant</title>
 </head>

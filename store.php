@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include("include/header.php") ?>
+<?php 
+require_once("include/header.php");
+require_once("include/inc.php");
+?>
+
 
     <body>
 
@@ -57,182 +61,38 @@
                 </div>
             </div>
 
+
             <div class="ui container" id="shop">
-                <h4 class="ui horizontal divider header"><i class="tag icon"></i>GROUP1</h4>
-                <div class="ui special four cards">
-                    <div class="card">
-                        <div class="ui bottom right blue attached label">$10.00</div>
-                        <div class="blurring dimmable image">
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button btn-def-modal">Desc.</div>
-                                        <div class="ui green inverted button btn-buy-modal">Buy</div>
+                <div class="ui grid">
+                    <div class="ui twelve wide column">
+                        <div class="ui segment">
+                            <div class="ui brown secondary menu">
+                                <a class="item active">All</a>
+                                <a class="item">Raw Material</a>
+                                <a class="item">Fruit</a>
+                                <div class="right menu">
+                                    <div class="item">
+                                        <div class="ui icon input">
+                                            <input type="text" placeholder="Search...">
+                                            <i class="search link icon"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <img src="http://www.puppiesite.com/wp-content/uploads/sh/shiba-funny-shiba-inu-dog-showing-smiley-face-puppies-breed.jpg">
-                        </div>
 
-                        <div class="content">
-                            <div class="header">Cute Dog</div>
-                            <div class="description">
-                                <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size. sdafasdfsad adsfasdf</p>
+                            <div class="ui special three cards">
+                                <?php get_product() ?>
                             </div>
                         </div>
                     </div>
-
-                    <div class="card">
-                        <div class="ui bottom right blue attached label">$10.00</div>
-                        <div class="blurring dimmable image">
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button btn-def-modal">Desc.</div>
-                                        <div class="ui green inverted button btn-buy-modal">Buy</div>
-                                    </div>
-                                </div>
+                    <div class="four wide column">
+                        <div class="ui segments">
+                            <div class="ui center aligned green inverted segment">
+                                <h3><i class="add to cart icon"></i>CART</h3>
                             </div>
-                            <img src="http://cdn.lifebuzz.com/images/122569/lifebuzz-16bd4438698d114353cea4d49f5dbbf8-limit_2000.jpg">
-                        </div>
-
-                        <div class="content">
-                            <div class="header">Cute Dog</div>
-                            <div class="description">
-                                <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size. sdafasdfsad adsfasdf</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="ui bottom right blue attached label">$10.00</div>
-                        <div class="blurring dimmable image">
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button btn-def-modal">Desc.</div>
-                                        <div class="ui green inverted button btn-buy-modal">Buy</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="http://www.browniebites.net/photos/2012/dogs/apple-carrot-dog-treats-recipes-6.jpg">
-                        </div>
-
-                        <div class="content">
-                            <div class="header">Cute Dog</div>
-                            <div class="description">
-                                <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size. sdafasdfsad adsfasdf</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="ui bottom right blue attached label">$10.00</div>
-                        <div class="blurring dimmable image">
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button btn-def-modal">Desc.</div>
-                                        <div class="ui green inverted button btn-buy-modal">Buy</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="http://dog-lovers.co.uk/wp-content/uploads/2016/02/morguefile-dog-glasses.jpg">
-                        </div>
-
-                        <div class="content">
-                            <div class="header">Cute Dog</div>
-                            <div class="description">
-                                <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size. sdafasdfsad adsfasdf</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="ui bottom right blue attached label">$10.00</div>
-                        <div class="blurring dimmable image">
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button btn-def-modal">Desc.</div>
-                                        <div class="ui green inverted button btn-buy-modal">Buy</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="http://placehold.it/200x150">
-                        </div>
-
-                        <div class="content">
-                            <div class="header">Cute Dog</div>
-                            <div class="description">
-                                <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size. sdafasdfsad adsfasdf</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="ui bottom right blue attached label">$10.00</div>
-                        <div class="blurring dimmable image">
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button btn-def-modal">Desc.</div>
-                                        <div class="ui green inverted button btn-buy-modal">Buy</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="http://placehold.it/200x150">
-                        </div>
-
-                        <div class="content">
-                            <div class="header">Cute Dog</div>
-                            <div class="description">
-                                <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size. sdafasdfsad adsfasdf</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <h4 class="ui horizontal divider header"><i class="tag icon"></i>GROUP2</h4>
-                    <div class="card">
-                        <div class="ui bottom right blue attached label">$10.00</div>
-                        <div class="blurring dimmable image">
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button btn-def-modal">Desc.</div>
-                                        <div class="ui green inverted button btn-buy-modal">Buy</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="http://placehold.it/200x150">
-                        </div>
-
-                        <div class="content">
-                            <div class="header">Cute Dog</div>
-                            <div class="description">
-                                <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size. sdafasdfsad adsfasdf</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="ui bottom right blue attached label">$10.00</div>
-                        <div class="blurring dimmable image">
-                            <div class="ui dimmer">
-                                <div class="content">
-                                    <div class="center">
-                                        <div class="ui inverted button btn-def-modal">Desc.</div>
-                                        <div class="ui green inverted button btn-buy-modal">Buy</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <img src="http://placehold.it/200x150">
-                        </div>
-
-                        <div class="content">
-                            <div class="header">Cute Dog</div>
-                            <div class="description">
-                                <p>Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size. sdafasdfsad adsfasdf</p>
+                            <div class="ui segment">
+                                <p><span>3 items</span></p>
+                                <a href="#" class="fluid ui red inverted button">Check Out!!</a>
                             </div>
                         </div>
                     </div>
