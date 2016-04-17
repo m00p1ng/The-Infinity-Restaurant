@@ -25,7 +25,7 @@ function fetch_array($result){
 }
 
 function get_product(){
-    $query = query("SELECT * FROM Product");
+    $query = query("SELECT * FROM product");
     confirm($query);
     
     while($row = fetch_array($query)){
@@ -37,8 +37,8 @@ function get_product(){
                 <div class="ui dimmer">
                     <div class="content">
                         <div class="center">
-                            <div class="ui inverted button btn-def-modal">Desc.</div>
-                            <div class="ui green inverted button btn-buy-modal">Buy</div>
+                            <button class="ui inverted button btn-def-modal" value="{$row['ProdID']}">Desc.</button>
+                            <button class="ui green inverted button btn-buy-modal" value="{$row['ProdID']}">Buy</button>
                         </div>
                     </div>
                 </div>
