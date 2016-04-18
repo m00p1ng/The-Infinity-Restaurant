@@ -5,5 +5,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/semantic.min.js"></script>
     <script src="js/shop.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/login.js"></script>
     <title>My Restaurant</title>
 </head>

@@ -14,8 +14,8 @@ require_once("include/inc.php");
         include("include/menubar.php");
         include("include/product_buy.php");
         include("include/product_description.php");
+        include("include/product_store.php");
         ?>
-
             <div class="ui container">
                 <div class="ui top bilboard test ad" data-text="">
                     <div class="ui fluid image">
@@ -23,18 +23,17 @@ require_once("include/inc.php");
                     </div>
                 </div>
             </div>
-
             <div class="ui container" id="shop">
                 <div class="ui grid">
                     <div class="ui twelve wide column">
                         <div class="ui segment">
-
                             <div class="ui brown secondary menu">
-                                <a class="type item active">All</a>
-                                <a class="type item">Raw Material</a>
-                                <a class="type item">Fruit</a>
-                                <a class="type item">Vegetable</a>
-                                <a class="type item">Drinking</a>
+                                <button class="type item active" id="show-all">All</button>
+                                <button class="type item" id="show-raw_material">Raw Material</button>
+                                <button class="type item" id="show-fruit">Fruit</button>
+                                <button class="type item" id="show-vegetable">Vegetable</button>
+                                <button class="type item" id="show-drinking">Drinking</button>
+                                <button class="type item" id="show-test">Test</button>
                                 <div class="right menu">
                                     <div class="item">
                                         <div class="ui icon input">
@@ -44,11 +43,24 @@ require_once("include/inc.php");
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="ui special three cards">
-                                <?php get_product() ?>
+                            <div class="ui special three cards show-prod" id="page-all">
+                                <?php get_product('') ?>
                             </div>
-
+                            <div class="ui special three cards show-prod" id="page-raw_material">
+                                <?php get_product('raw_material') ?>
+                            </div>
+                            <div class="ui special three cards show-prod" id="page-fruit">
+                                <?php get_product('fruit') ?>
+                            </div>
+                            <div class="ui special three cards show-prod" id="page-vegetable">
+                                <?php get_product('vegetable') ?>
+                            </div>
+                            <div class="ui special three cards show-prod" id="page-drinking">
+                                <?php get_product('drinking') ?>
+                            </div>
+                            <div class="ui special three cards show-prod" id="page-test">
+                                <?php get_product('test') ?>
+                            </div>
                         </div>
                     </div>
                     <div class="four wide column">

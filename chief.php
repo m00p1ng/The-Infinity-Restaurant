@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include("include/header.php"); ?>
+<?php 
+require_once("include/header.php");
+require_once("include/inc.php");
+?>
 
     <body>
         <?php

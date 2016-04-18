@@ -1,25 +1,26 @@
 <div class="ui small modal" id="login-modal">
-    <div class="header">Login</div>
+    <div class="header"><i class="privacy icon"></i>Login</div>
     <div class="content">
-        <form class="ui form" method="post">
+        <div id="errorLogin"></div>
+        <div class="ui form" id="form-login">
             <div class="field">
                 <label>Username</label>
                 <div class="ui left icon input">
                     <i class="user icon"></i>
-                    <input type="text" name="username" placeholder="Username or E-mail">
+                    <input type="text" name="log-username" id="log-username" placeholder="Username" required>
                 </div>
             </div>
             <div class="field">
                 <label>Password</label>
                 <div class="ui left icon input">
                     <i class="lock icon"></i>
-                    <input type="password" name="password" placeholder="Password">
+                    <input type="password" name="log-password" id="log-password" placeholder="Password" required>
                 </div>
             </div>
             <div class="field">
-                <input class="ui right floated green button" type="submit" name="submit" value="Login">
+                <button class="ui right floated green button" name="log-submit" id="log-submit" type="submit">Login</button>
             </div>
-        </form>
+        </div>
     </div>
     <br />
     <br />

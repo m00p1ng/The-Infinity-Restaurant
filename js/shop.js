@@ -1,19 +1,9 @@
-//login and register modal
-$(document).ready(function () {
-    $(".item#login").click(function () {
-        $("#login-modal").modal("show");
-    });
-
-    $(".item#register").click(function () {
-        $("#register-modal").modal("show");
-    });
-});
-
+// button from card in store
 $(document).ready(function () {
     $(".btn-def-modal").click(function () {
         $.ajax({
             type: 'GET',
-            url: 'include/prodBuy_query.php',
+            url: 'include/prodDesc_query.php',
             data: 'prod_id=' + $(this).attr("value"),
             cache: false,
             success: function (value) {
@@ -25,25 +15,71 @@ $(document).ready(function () {
             }
         });
     });
+
+    $(".btn-buy-modal").click(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'include/prodBuy_query.php',
+            data: 'prod_id=' + $(this).attr("value"),
+            cache: false,
+            success: function (value) {
+                var data = value.split(".,.");
+                $('#BuyName').html(data[0]);
+                $('#BuyPic').attr('src', data[1]);
+                $(".item-buy-modal").modal("show");
+            }
+        });
+    });
 });
 
-$(document).on("click", ".btn-buy-modal", function () {
-    $(".item-buy-modal").modal("show");
-});
-
+// active dropdown and blur
 $(document).ready(function () {
     $('.special.three.cards .image').dimmer({
         on: 'hover'
     });
 
     $('.ui.dropdown').dropdown({
-        on: 'click'
-    })
+        on: 'hover'
+    });
 });
 
+// active menu product
 $(document).ready(function () {
     $(".type.item").click(function () {
         $('.type.item').removeClass("active");
         $(this).addClass("active");
+    });
+});
+
+$(document).ready(function () {
+    $(".show-prod").hide();
+    $("#page-all").show();
+    return false;
+});
+
+$(document).ready(function () {
+    $("#show-all").click(function () {
+        $('.show-prod').hide();
+        $('#page-all').show();
+    });
+    $("#show-raw_material").click(function () {
+        $('.show-prod').hide();
+        $('#page-raw_material').show();
+    });
+    $("#show-fruit").click(function () {
+        $('.show-prod').hide();
+        $('#page-fruit').show();
+    });
+    $("#show-drinking").click(function () {
+        $('.show-prod').hide();
+        $('#page-drinking').show();
+    });
+    $("#show-vegetable").click(function () {
+        $('.show-prod').hide();
+        $('#page-vegetable').show();
+    });
+    $("#show-test").click(function () {
+        $('.show-prod').hide();
+        $('#page-test').show();
     });
 });

@@ -1,13 +1,14 @@
 <div class="ui small modal" id="register-modal">
     <div class="header"><i class="users icon"></i>Registration</div>
     <div class="content">
-        <form class="ui form" method="post">
+        <div id="errorMsg"></div>
+        <div class="ui form">
             <h4 class="ui dividing header">Account</h4>
             <div class="nine wide field">
                 <div class="field">
                     <label>Username</label>
                     <div class="ui left icon input">
-                        <input type="email" placeholder="Ex. supertam" value="">
+                        <input type="text" name="username" id="username" placeholder="Ex. mooping" value="" required>
                         <i class="user icon"></i>
                     </div>
                 </div>
@@ -16,7 +17,7 @@
                 <div class="field">
                     <label>Password</label>
                     <div class="ui left icon input">
-                        <input type="password" placeholder="Password here ...">
+                        <input type="password" name="password" id="password" placeholder="Password here ..." required>
                         <i class="lock icon"></i>
                     </div>
                 </div>
@@ -25,7 +26,7 @@
                 <div class="field">
                     <label>Confirm Password</label>
                     <div class="ui left icon input">
-                        <input type="password" placeholder="Password again ...">
+                        <input type="password" name="con_password" id="con_password" placeholder="Password again ..." required>
                         <i class="lock icon"></i>
                     </div>
                 </div>
@@ -36,19 +37,38 @@
                 <label>Name</label>
                 <div class="two fields">
                     <div class="field">
-                        <input type="text" name="firstname" placeholder="First Name" value="">
+                        <input type="text" name="firstname" id="firstname" placeholder="First Name" value="" required>
                     </div>
                     <div class="field">
-                        <input type="text" name="lastname" placeholder="Last Name" value="">
+                        <input type="text" name="lastname" id="lastname" placeholder="Last Name" value="" required>
                     </div>
                 </div>
+            </div>
+            <div class="field">
+                <label>Gender</label>
+                <div class="two wide field">
+                    <div class="ui selection dropdown">
+                        <input type="hidden" name="gender" id="gender">
+                        <div class="default text">Type</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="item" data-value="male">
+                                <i class="large male icon"></i> Male
+                            </div>
+                            <div class="item" data-value="female">
+                                <i class="large female icon"></i> Female
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="field">
                 <label>Date of Birth</label>
                 <div class="fields">
                     <div class="two wide field">
                         <div class="field">
-                            <select class="ui fluid search dropdown" name="dob-day">
+                            <select class="ui fluid search dropdown" name="dob-day" id="dob-day">
                                 <option value="">Day</option>
                                 <option value="01">01</option>
                                 <option value="02">02</option>
@@ -86,7 +106,7 @@
                     </div>
                     <div class="three wide field">
                         <div class="field">
-                            <select class="ui fluid search dropdown" name="dob-month">
+                            <select class="ui fluid search dropdown" name="dob-month" id="dob-month">
                                 <option value="">Month</option>
                                 <option value="01">January</option>
                                 <option value="02">February</option>
@@ -105,7 +125,7 @@
                     </div>
                     <div class="two wide field">
                         <div class="field">
-                            <select class="ui fluid search dropdown" name="dob-month">
+                            <select class="ui fluid search dropdown" name="dob-year" id="dob-year">
                                 <option value="">Year</option>
                                 <option value="2016">2016</option>
                                 <option value="2015">2015</option>
@@ -163,7 +183,7 @@
             <div class="field">
                 <label>Address</label>
                 <div class="ui left icon input">
-                    <input type="text" name="address" placeholder="Address">
+                    <input type="text" name="address" id="address" placeholder="Address" required>
                     <i class="home icon"></i>
                 </div>
             </div>
@@ -171,7 +191,7 @@
                 <div class="field">
                     <label>Email</label>
                     <div class="ui left icon input">
-                        <input type="email" placeholder="Example@domain.com" value="">
+                        <input type="email" placeholder="Example@domain.com" value="" name="email" id="email" required>
                         <i class="mail icon"></i>
                     </div>
                 </div>
@@ -180,7 +200,7 @@
                 <div class="field">
                     <label>Phone</label>
                     <div class="ui left icon input">
-                        <input type="text" placeholder="Ex. 086-662-5526" value="">
+                        <input type="text" name="phone" id="phone" placeholder="Ex. 081-234-5678" value="" maxlength="12" required>
                         <i class="phone icon"></i>
                     </div>
                 </div>
@@ -190,14 +210,14 @@
             <div class="field">
                 <label>Card Type</label>
                 <div class="ui selection dropdown">
-                    <input type="hidden" name="card[type]">
+                    <input type="hidden" name="card-type" id="card-type">
                     <div class="default text">Type</div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
                         <div class="item" data-value="visa">
                             <i class="visa icon"></i> Visa
                         </div>
-                        <div class="item" data-value="visa">
+                        <div class="item" data-value="mastercard">
                             <i class="mastercard icon"></i> Master Card
                         </div>
                         <div class="item" data-value="amex">
@@ -209,17 +229,17 @@
             <div class="fields">
                 <div class="seven wide field">
                     <label>Card Number</label>
-                    <input type="text" name="card-number" maxlength="16" placeholder="Card #" value="">
+                    <input type="text" name="card-number" id="card-number" maxlength="16" placeholder="Card #" value="" required>
                 </div>
                 <div class="three wide field">
                     <label>CVC</label>
-                    <input type="text" name="card-cvc" maxlength="3" placeholder="CVC" value="">
+                    <input type="text" name="card-cvc" id="card-cvc" maxlength="3" placeholder="CVC" value="" required>
                 </div>
                 <div class="six wide field">
                     <label>Expiration</label>
                     <div class="two fields">
                         <div class="field">
-                            <select class="ui fluid search dropdown" name="card-exp-m" value="">
+                            <select class="ui fluid search dropdown" name="exp-month" id="exp-month" value="" required>
                                 <option value="">Month</option>
                                 <option value="01">January</option>
                                 <option value="02">February</option>
@@ -236,7 +256,7 @@
                             </select>
                         </div>
                         <div class="field">
-                            <select class="ui fluid search dropdown" name="card-exp-m" value="">
+                            <select class="ui fluid search dropdown" name="exp-year" id="exp-year" value="" required>
                                 <option value="">Year</option>
                                 <option value="2016">2016</option>
                                 <option value="2017">2017</option>
@@ -256,7 +276,25 @@
                     </div>
                 </div>
             </div>
-            <input class="ui green button" type="submit" name="submit">
-        </form>
+            <button class="ui green button" id="Btn-submit" name="Btn-submit">Submit</button>
+        </div>
     </div>
+</div>
+
+
+<div class="ui small modal" id="register-complete">
+    <div class="header"></div>
+    <div class="content">
+        <div class="ui grid">
+            <div class="four wide column">
+                <i class="massive green check circle outline icon"></i>
+            </div>
+            <div class="twelve wide column">
+                <h1>Registration Complete!!!</h1>
+                <h3>You can login now.</h3>
+            </div>
+        </div>
+
+    </div>
+
 </div>
