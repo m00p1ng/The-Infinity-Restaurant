@@ -33,11 +33,10 @@ require_once("include/inc.php");
                                 <button class="type item" id="show-fruit">Fruit</button>
                                 <button class="type item" id="show-vegetable">Vegetable</button>
                                 <button class="type item" id="show-drinking">Drinking</button>
-                                <button class="type item" id="show-test">Test</button>
                                 <div class="right menu">
                                     <div class="item">
                                         <div class="ui icon input">
-                                            <input type="text" placeholder="Search...">
+                                            <input type="text" placeholder="Search..." name="search-prod" id="search-prod">
                                             <i class="search link icon"></i>
                                         </div>
                                     </div>
@@ -58,18 +57,56 @@ require_once("include/inc.php");
                             <div class="ui special three cards show-prod" id="page-drinking">
                                 <?php get_product('drinking') ?>
                             </div>
-                            <div class="ui special three cards show-prod" id="page-test">
-                                <?php get_product('test') ?>
-                            </div>
+                            <div class="ui special three cards show-prod" id="page-search"></div>
                         </div>
                     </div>
                     <div class="four wide column">
                         <div class="ui segments">
                             <div class="ui center aligned green inverted segment">
-                                <h3><i class="add to cart icon"></i>CART</h3>
+                                <h3><i class="big cart icon"></i>IN CART</h3>
                             </div>
                             <div class="ui segment">
-                                <p><span>3 items</span></p>
+                                <div class="ui message">
+                                    <i class="close icon"></i>
+                                    <div class="header">
+                                        Mooping(x3)
+                                    </div>
+                                    <p>Total: $30</p>
+                                </div>
+                                <div class="ui message">
+                                    <i class="close icon"></i>
+                                    <div class="header">
+                                        Welcome back!
+                                    </div>
+                                    <p>This is a special</p>
+                                </div>
+                                <div class="ui message">
+                                    <i class="close icon"></i>
+                                    <div class="header">
+                                        Welcome back!
+                                    </div>
+                                    <p>This is a special</p>
+                                </div>
+                                <div class="ui message">
+                                    <i class="close icon"></i>
+                                    <div class="header">
+                                        Welcome back!
+                                    </div>
+                                    <p>This is a special</p>
+                                </div>
+                                <div class="ui message">
+                                    <i class="close icon"></i>
+                                    <div class="header">
+                                        Welcome back!
+                                    </div>
+                                    <p>This is a special</p>
+                                </div>
+                                <br />
+                                <div class="ui right aligned">
+                                    <h2>Total: $150</h2>
+                                </div>
+
+                                <br />
                                 <a href="#" class="fluid ui red inverted button">Check Out!!</a>
                             </div>
                         </div>

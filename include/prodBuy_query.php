@@ -8,6 +8,8 @@ if($_GET["prod_id"]){
     $row = fetch_array($result);
     $prodname = $row['ProdName'];
     $prodpic = $row['ProdPicture'];
-    echo $prodname . ".,." . $prodpic;
+    $prodtotal = $row['ProdAmount'];
+    $prodprice = $row['ProdPricePerUnit'];
+    echo $prodname . ".,." . $prodpic . ".,." . $prodtotal . ".,." . $prodprice;
 }
 ?>

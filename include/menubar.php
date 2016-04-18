@@ -17,17 +17,20 @@
                     }
                     else{
                         echo "
-                            <div class='item disabled'><h4><i class='announcement icon'></i>Hello, {$_SESSION['username']}</h4></div>
+                            <div class='item disabled'><h4><i class='announcement icon'></i>Hi, {$_SESSION['username']}</h4></div>
                             <div class='divider'></div>
+                            <div class='header'>Info</div>
                             <div class='item'><i class='info icon'></i>My Information</div>
                             <div class='item'><i class='repeat icon'></i>History</div>";
                         if($_SESSION['userrole'] == 'Employee' || $_SESSION['userrole'] == 'Admin'){
                             echo "
+                            <div class='divider'></div>
+                            <div class='header'>Manage</div>
                             <div class='item'><i class='tasks icon'></i>Orderlist</div>
                             <div class='item'><i class='shop icon'></i>Edit Store</div>";
                             if($_SESSION['userrole'] == 'Admin'){
                                 echo "
-                                <div class='item'><i class='users icon'></i>Edit User</div>";
+                                <div class='item'><i class='users icon'></i>Users</div>";
                             }
                         }
                         echo "
