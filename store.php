@@ -6,9 +6,6 @@ require_once("include/header.php");
 require_once("include/inc.php");
 ?>
 
-    <script>
-    </script>
-
     <body>
         <?php
         include("include/menubar.php");
@@ -69,43 +66,15 @@ require_once("include/inc.php");
                                 <div class="ui message">
                                     <i class="close icon"></i>
                                     <div class="header">
-                                        Mooping(x3)
+                                        Mooping (x3)
                                     </div>
-                                    <p>Total: $30</p>
                                 </div>
                                 <div class="ui message">
                                     <i class="close icon"></i>
                                     <div class="header">
-                                        Welcome back!
+                                        Haha (x555)
                                     </div>
-                                    <p>This is a special</p>
                                 </div>
-                                <div class="ui message">
-                                    <i class="close icon"></i>
-                                    <div class="header">
-                                        Welcome back!
-                                    </div>
-                                    <p>This is a special</p>
-                                </div>
-                                <div class="ui message">
-                                    <i class="close icon"></i>
-                                    <div class="header">
-                                        Welcome back!
-                                    </div>
-                                    <p>This is a special</p>
-                                </div>
-                                <div class="ui message">
-                                    <i class="close icon"></i>
-                                    <div class="header">
-                                        Welcome back!
-                                    </div>
-                                    <p>This is a special</p>
-                                </div>
-                                <br />
-                                <div class="ui right aligned">
-                                    <h2>Total: $150</h2>
-                                </div>
-
                                 <br />
                                 <a href="#" class="fluid ui red inverted button">Check Out!!</a>
                             </div>

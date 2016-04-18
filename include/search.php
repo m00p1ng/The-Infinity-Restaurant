@@ -40,7 +40,9 @@ EOD;
         else{
             echo '
             <div class="center aligned">
-                <h1>NOT FOUND</h1>
+                <br />
+                <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOT FOUND</h1>
+                <br />
             </div>
             ';
         }

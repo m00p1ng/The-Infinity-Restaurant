@@ -12,36 +12,40 @@
                     <?php
                     if(!logged_in()){
                         echo '
-                            <div class="item" id="login"><i class="privacy icon"></i>Login</div>
-                            <div class="item" id="register"><i class="add user icon"></i>Register</div>';
+                    <div class="item" id="register"><i class="add user icon"></i>Register</div>
+                    <div class="item" id="login"><i class="privacy icon"></i>Login</div>';
                     }
                     else{
                         echo "
-                            <div class='item disabled'><h4><i class='announcement icon'></i>Hi, {$_SESSION['username']}</h4></div>
-                            <div class='divider'></div>
-                            <div class='header'>Info</div>
-                            <div class='item'><i class='info icon'></i>My Information</div>
-                            <div class='item'><i class='repeat icon'></i>History</div>";
+                    <div class='item disabled'><h4><i class='announcement icon'></i>Hi, {$_SESSION['username']}</h4></div>
+                    <div class='divider'></div>
+                    <div class='header'>Info</div>
+                    <a class='item' href='information.php'><i class='info icon'></i>My Information</a>
+                    <a class='item' href='history.php'><i class='repeat icon'></i>History</a>";
                         if($_SESSION['userrole'] == 'Employee' || $_SESSION['userrole'] == 'Admin'){
                             echo "
-                            <div class='divider'></div>
-                            <div class='header'>Manage</div>
-                            <div class='item'><i class='tasks icon'></i>Orderlist</div>
-                            <div class='item'><i class='shop icon'></i>Edit Store</div>";
+                    <div class='divider'></div>
+                    <div class='header'>Manage</div>
+                    <a class='item' href='orderlist.php'><i class='tasks icon'></i>Orderlist</a>
+                    <a class='item' href='editstore.php'><i class='shop icon'></i>Edit Store</a>";
                             if($_SESSION['userrole'] == 'Admin'){
                                 echo "
-                                <div class='item'><i class='users icon'></i>Users</div>";
+                    <a class='item' href='users.php'><i class='users icon'></i>Users</a>";
                             }
                         }
                         echo "
-                            <div class='divider'></div>
-                            <a href='include/logout.php' class='item'><i class='power icon'></i>Logout</a>";
+                    <div class='divider'></div>
+                    <a href='include/logout.php' class='item'><i class='power icon'></i>Logout</a>";
                     }
                     ?>
                 </div>
             </div>
-            <?php include("include/form_login.php") ?>
-                <?php include("include/form_register.php") ?>
+            <?php
+            if(!isset($_SESSION['username'])){
+                include("include/form_login.php");
+                include("include/form_register.php"); 
+            }
+            ?>
         </div>
     </div>
 </nav>
