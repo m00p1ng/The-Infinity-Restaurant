@@ -64,4 +64,7 @@ $(document).ready(function () {
 function regis_com() {
     $('#register-modal').modal("hide");
     $('#register-complete').modal("show");
+    setTimeout(function () {
+        $('#register-complete').modal("hide");
+    }, 2000);
 }

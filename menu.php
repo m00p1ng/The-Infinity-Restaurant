@@ -9,7 +9,6 @@ require_once("include/inc.php");
         <?php
         include("include/menubar.php");
         ?>
-
     </body>
 
 </html>

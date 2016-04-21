@@ -9,8 +9,8 @@ require_once("include/inc.php");
     <body>
         <?php
         include("include/menubar.php");
-        include("include/product_buy.php");
-        include("include/product_description.php");
+        include("include/form_product_buy.php");
+        include("include/form_product_description.php");
         include("include/product_store.php");
         ?>
             <div class="ui container">
@@ -43,16 +43,16 @@ require_once("include/inc.php");
                                 <?php get_product('') ?>
                             </div>
                             <div class="ui special three cards show-prod" id="page-raw_material">
-                                <?php get_product('raw_material') ?>
+                                <?php get_product('Raw material') ?>
                             </div>
                             <div class="ui special three cards show-prod" id="page-fruit">
-                                <?php get_product('fruit') ?>
+                                <?php get_product('Fruit') ?>
                             </div>
                             <div class="ui special three cards show-prod" id="page-vegetable">
-                                <?php get_product('vegetable') ?>
+                                <?php get_product('Vegetable') ?>
                             </div>
                             <div class="ui special three cards show-prod" id="page-drinking">
-                                <?php get_product('drinking') ?>
+                                <?php get_product('Drinking') ?>
                             </div>
                             <div class="ui special three cards show-prod" id="page-search"></div>
                         </div>
@@ -75,6 +75,7 @@ require_once("include/inc.php");
                                         Haha (x555)
                                     </div>
                                 </div>
+                                <h2>Total: $150</h2>
                                 <br />
                                 <a href="#" class="fluid ui red inverted button">Check Out!!</a>
                             </div>

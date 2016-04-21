@@ -6,12 +6,12 @@
                 <img class="ui large rounded image" id="BuyPic">
             </div>
             <div class="eight wide column">
-                <h2>How many do you need?</h2>
+                <h2>Please enter the amount:</h2>
                 <div class="ui form">
                     <div class="inline fields">
                         <label>Amount :</label>
                         <div class="four wide field">
-                            <input type="text" maxlength="3" value="1" id="BuyTotal" onkeypress='return event.charCode >= 48 && event.charCode <=57'>
+                            <input type="text" maxlength="3" value="1" id="BuyTotal" onkeypress='return event.charCode >= 48 && event.charCode <=57' readonly>
                         </div>
                         <input type="hidden" id="Instock">
                         <button class="ui compact icon button" id="minus-value">

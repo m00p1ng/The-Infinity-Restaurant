@@ -18,7 +18,7 @@
                 </div>
             </div>
             <div class="field">
-                <button class="ui right floated green button" name="log-submit" id="log-submit" type="submit">Login</button>
+                <input class="ui right floated green button" name="log-submit" id="log-submit" type="submit" value="Login">
             </div>
         </div>
     </div>

@@ -27,11 +27,8 @@
                     <div class='divider'></div>
                     <div class='header'>Manage</div>
                     <a class='item' href='orderlist.php'><i class='tasks icon'></i>Orderlist</a>
-                    <a class='item' href='editstore.php'><i class='shop icon'></i>Edit Store</a>";
-                            if($_SESSION['userrole'] == 'Admin'){
-                                echo "
+                    <a class='item' href='editstore.php'><i class='shop icon'></i>Edit Store</a>
                     <a class='item' href='users.php'><i class='users icon'></i>Users</a>";
-                            }
                         }
                         echo "
                     <div class='divider'></div>

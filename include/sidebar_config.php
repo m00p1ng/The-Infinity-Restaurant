@@ -1,8 +1,8 @@
 <div class="ui segment">
     <div class="ui fluid secondary vertical menu">
         <div class="header item">INFO</div>
-        <a class="item"><i class='info icon'></i>My Information</a>
-        <a class="item"><i class='repeat icon'></i>History</a>
+        <a class="item" href="information.php"><i class='info icon'></i>My Information</a>
+        <a class="item" href="history.php"><i class='repeat icon'></i>History</a>
         <?php 
         if($_SESSION['userrole'] == 'Employee' || $_SESSION['userrole'] == 'Admin'){
             echo "
