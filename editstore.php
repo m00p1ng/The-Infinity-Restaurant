@@ -56,7 +56,7 @@ require_once("include/inc.php");
                                         <td class="center aligned">
                                             <button class="ui icon button Preview-Product" value="{$row['ProdID']}"><i class="newspaper icon"></i></button>
                                             <button class="ui icon button Edit-Product" value="{$row['ProdID']}"><i class="edit icon"></i></button>
-                                            <button class="ui icon button Delete-Product" value="{$row['ProdID']}"><i class="trash outline icon"></i></button>
+                                            <button class="ui icon red button Delete-Product" value="{$row['ProdID']}"><i class="trash outline icon"></i></button>
                                         </td>
                                     </tr>
 EOD;

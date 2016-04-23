@@ -96,8 +96,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(empty($address)){
         $errors[] = "Address cannot empty";
     }
-    else if(strlen($address) < 50){
-        $errors[] = "Please enter valid address";
+    else if(strlen($address) < 10){
+        $errors[] = "Address cannot be less than 10 characters";
     }
     
     if(empty($phone)){

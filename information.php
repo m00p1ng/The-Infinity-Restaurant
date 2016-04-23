@@ -20,7 +20,7 @@ require_once("include/inc.php");
                             <div class="ui divider"></div>
                             <div class="ui form">
                                 <div class="field">
-                                    <label>Username:</label>
+                                    <label>Username</label>
                                     <input type="text" value="test" disabled>
                                 </div>
                                 <div class="field">
@@ -28,44 +28,44 @@ require_once("include/inc.php");
                                 </div>
                                 <div class="two fields">
                                     <div class="field">
-                                        <label>Firstname:</label>
+                                        <label>Firstname</label>
                                         <input type="text">
                                     </div>
                                     <div class="field">
-                                        <label>Lastname:</label>
+                                        <label>Lastname</label>
                                         <input type="text">
                                     </div>
                                 </div>
                                 <div class="field">
-                                    <label>Gender:</label>
+                                    <label>Gender</label>
                                     <input type="text">
                                 </div>
                                 <div class="field">
-                                    <label>Date of Birth:</label>
+                                    <label>Date of Birth</label>
                                     <input type="text">
                                 </div>
                                 <div class="field">
-                                    <label>Address:</label>
+                                    <label>Address</label>
                                     <input type="text">
                                 </div>
                                 <div class="field">
-                                    <label>Email:</label>
+                                    <label>Email</label>
                                     <input type="text">
                                 </div>
                                 <div class="field">
-                                    <label>Phone:</label>
+                                    <label>Phone</label>
                                     <input type="text">
                                 </div>
                                 <div class="field">
-                                    <label>Card Type:</label>
+                                    <label>Card Type</label>
                                     <input type="text">
                                 </div>
                                 <div class="field">
-                                    <label>Card Number:</label>
+                                    <label>Card Number</label>
                                     <input type="text">
                                 </div>
                                 <div class="field">
-                                    <label>Expiration:</label>
+                                    <label>Expiration</label>
                                     <input type="text">
                                 </div>
                                 <div class="field">

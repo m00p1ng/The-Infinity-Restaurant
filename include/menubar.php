@@ -7,7 +7,7 @@
         <div class="right menu">
             <a class="item" href="store.php">STORE</a>
             <div class="ui floating dropdown">
-                <a class="item"><i class="user large icon"></i><i class="dropdown icon"></i></a>
+                <a class="item"><?php (!logged_in()) ? $user_label =  "<i class='user icon'></i>Guest" : $user_label = "<i class='user icon'></i>".$_SESSION['username']; echo $user_label ?><i class='dropdown icon'></i></a>
                 <div class="menu">
                     <?php
                     if(!logged_in()){
@@ -16,19 +16,26 @@
                     <div class="item" id="login"><i class="privacy icon"></i>Login</div>';
                     }
                     else{
-                        echo "
-                    <div class='item disabled'><h4><i class='announcement icon'></i>Hi, {$_SESSION['username']}</h4></div>
-                    <div class='divider'></div>
+                        if($_SESSION['userrole'] != 'Admin') {
+                            echo "
                     <div class='header'>Info</div>
                     <a class='item' href='information.php'><i class='info icon'></i>My Information</a>
-                    <a class='item' href='history.php'><i class='repeat icon'></i>History</a>";
+                    <a class='item' href='history.php'><i class='history icon'></i>History</a>";
+                        }
+                        if($_SESSION['userrole'] == 'Employee'){
+                            echo "<div class='divider'></div>";
+                        }
                         if($_SESSION['userrole'] == 'Employee' || $_SESSION['userrole'] == 'Admin'){
                             echo "
-                    <div class='divider'></div>
                     <div class='header'>Manage</div>
                     <a class='item' href='orderlist.php'><i class='tasks icon'></i>Orderlist</a>
-                    <a class='item' href='editstore.php'><i class='shop icon'></i>Edit Store</a>
+                    <a class='item' href='editstore.php'><i class='shop icon'></i>Store</a>
+                    <a class='item' href='customer.php'><i class='user icon'></i>Customer</a>";
+                            if($_SESSION['userrole'] == 'Admin'){
+                                echo"
+                    <a class='item' href='employee.php'><i class='user icon'></i>Employee</a>
                     <a class='item' href='users.php'><i class='users icon'></i>Users</a>";
+                            }
                         }
                         echo "
                     <div class='divider'></div>

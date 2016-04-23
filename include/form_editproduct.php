@@ -33,7 +33,7 @@
             <div class="four wide field">
                 <div class="field">
                     <label>Type</label>
-                    <div class="ui selection dropdown">
+                    <div class="ui selection disabled dropdown">
                         <input type="hidden" name="edit-prod-type" id="edit-prod-type">
                         <i class="dropdown icon"></i>
                         <div class="default text" id="show-type"></div>

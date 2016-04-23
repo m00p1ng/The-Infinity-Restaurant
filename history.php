@@ -16,6 +16,8 @@ require_once("include/inc.php");
                     </div>
                     <div class="thirteen wide column">
                         <div class="ui segment">
+                            <h1>History</h1>
+                            <div class="ui divider"></div>
                         </div>
                     </div>
                 </div>
