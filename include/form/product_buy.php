@@ -1,6 +1,7 @@
 <div class="ui small modal item-buy-modal">
     <div class="header" id="BuyName"></div>
     <div class="content">
+        <div id="errorMsg-addtocart"></div>
         <div class="ui grid">
             <div class="eight wide column">
                 <img class="ui large rounded image" id="BuyPic">
@@ -23,8 +24,9 @@
                     </div>
                 </div>
                 <h3 class="ui red header">In stock: <span id="BuyAmount"></span></h3>
-                <h2>Total: $20</h2>
-                <button class="ui right floated blue button"><i class="add to cart icon"></i>Add to Cart</button>
+                <input type="hidden" id="UnitPrice">
+                <h2>Total: $<span class="total_price"></span></h2>
+                <button class="ui right floated blue button add-to-cart"><i class="add to cart icon"></i>Add to Cart</button>
             </div>
         </div>
     </div>

@@ -1,4 +1,5 @@
 function login() {
+    var data;
     $("#login-modal").modal({
         onApprove: function () {
             var username = $("#log-username").val();
@@ -14,13 +15,16 @@ function login() {
                 },
                 cache: false,
                 success: function (value) {
-                    var data = value.split(".,.");
+                    data = value.split(".,.");
                     $("#errorLogin").html(data[0]);
                     if (data[1] == 1) {
                         location.reload();
                     }
                 }
             });
+            if (data[1] == 0) {
+                return false;
+            }
         }
     }).modal("show");
 }

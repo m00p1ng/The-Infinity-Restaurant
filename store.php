@@ -12,6 +12,13 @@ require_once("include/inc.php");
         include("include/form/product_buy.php");
         include("include/form/product_description.php");
         include("include/prod_show.php");
+        
+        if(!isset($_SESSION['product_total'])){
+            $_SESSION['product_total'] = 0;
+        }
+        if(!isset($_SESSION['product_count'])){
+            $_SESSION['product_count'] = 0;
+        }
         ?>
             <div class="ui container">
                 <div class="ui top bilboard test ad" data-text="">
@@ -63,19 +70,8 @@ require_once("include/inc.php");
                                 <h3><i class="big cart icon"></i>IN CART</h3>
                             </div>
                             <div class="ui segment">
-                                <div class="ui message">
-                                    <i class="close icon"></i>
-                                    <div class="header">
-                                        Mooping (x3)
-                                    </div>
-                                </div>
-                                <div class="ui message">
-                                    <i class="close icon"></i>
-                                    <div class="header">
-                                        Haha (x555)
-                                    </div>
-                                </div>
-                                <h2>Total: $150</h2>
+                                <div id="show-prod-cart"></div>
+                                <h2>Total: $<span class="Prod-total">0</span></h2>
                                 <br />
                                 <?php 
                                 if(isset($_SESSION['username'])){

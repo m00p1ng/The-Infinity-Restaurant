@@ -18,10 +18,12 @@ function clickDescription() {
 
 function clickBuy() {
     $(".btn-buy-modal").click(function () {
+        var id = $(this).attr("value");
+        $('#errorMsg-addtocart').html("");
         $.ajax({
             type: 'GET',
             url: 'include/query/prod_buy.php',
-            data: 'prod_id=' + $(this).attr("value"),
+            data: 'prod_id=' + id,
             cache: false,
             success: function (value) {
                 var data = value.split(".,.");
@@ -29,8 +31,35 @@ function clickBuy() {
                 $('#BuyPic').attr('src', data[1]);
                 $('#BuyAmount').html(data[2]);
                 $('#Instock').attr('value', data[2]);
-                $('#UnitPrice').html(data[3]);
+                $('#UnitPrice').attr('value', data[3]);
+                $('.total_price').html(data[3]);
+                $('.add-to-cart').attr('value', id);
                 $(".item-buy-modal").modal("show");
+            }
+        });
+    });
+}
+
+function AddtoCart() {
+    $(".add-to-cart").click(function () {
+        var id = $(this).val();
+        var amount = $('#BuyTotal').val();
+        $.ajax({
+            type: 'GET',
+            url: 'include/query/add_to_cart.php',
+            data: {
+                prod_id: id,
+                prod_amount: amount
+            },
+            cache: false,
+            success: function (value) {
+                var data = value.split(".,.");
+                $('#errorMsg-addtocart').html(data[0]);
+                if (data[1] == 1) {
+                    $(".item-buy-modal").modal("hide");
+                    $('#show-prod-cart').append(data[2]);
+                    CloseMsg();
+                }
             }
         });
     });
@@ -74,17 +103,23 @@ function Add_Minus() {
     $('#add-value').on('click', function () {
         var $qty = $(this).closest('div').find('#BuyTotal');
         var $max = $('#Instock').val();
+        var unitprice = parseInt($('#UnitPrice').val());
         $max = parseInt($max);
         var currentVal = parseInt($qty.val());
         if (!isNaN(currentVal) && currentVal < $max) {
             $qty.val(currentVal + 1);
+            var total = (currentVal + 1) * unitprice;
+            $('.total_price').html(total);
         }
     });
     $('#minus-value').on('click', function () {
         var $qty = $(this).closest('div').find('#BuyTotal');
         var currentVal = parseInt($qty.val());
+        var unitprice = parseInt($('#UnitPrice').val());
         if (!isNaN(currentVal) && currentVal > 1) {
             $qty.val(currentVal - 1);
+            var total = (currentVal - 1) * unitprice;
+            $('.total_price').html(total);
         }
     });
 }
@@ -104,6 +139,7 @@ function checkout_login() {
 $(document).ready(function () {
     clickDescription();
     clickBuy();
+    AddtoCart();
     mouseHover();
     activeTabMenu();
     searchProduct();
