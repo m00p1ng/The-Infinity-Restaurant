@@ -1,6 +1,7 @@
-<div class="ui small modal new-product-modal">
-    <div class="header">Add new product</div>
+<div class="ui small modal" id="new-product-modal">
+    <div class="header"><i class="plus icon"></i>Add new product</div>
     <div class="content">
+        <div class="errorMsg"></div>
         <div class="ui form">
             <div class="nine wide field">
                 <div class="field">
@@ -53,7 +54,7 @@
     </div>
 </div>
 
-<div class="ui small modal new-product-complete">
+<div class="ui small modal" id="new-product-complete">
     <div class="header"></div>
     <div class="content">
         <h1><i class="big green check circle outline icon"></i>&nbsp;&nbsp;Add new product complete!!</h1>

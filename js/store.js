@@ -36,12 +36,6 @@ function clickBuy() {
     });
 }
 
-function dropdownActive() {
-    $('.ui.dropdown').dropdown({
-        on: 'hover'
-    });
-}
-
 function mouseHover() {
     $('.special.three.cards .image').dimmer({
         on: 'hover'
@@ -101,15 +95,21 @@ function CloseMsg() {
     });
 }
 
+function checkout_login() {
+    $('#checkout_login').click(function () {
+        login();
+    });
+}
+
 $(document).ready(function () {
     clickDescription();
     clickBuy();
     mouseHover();
-    dropdownActive();
     activeTabMenu();
     searchProduct();
     Add_Minus();
     CloseMsg();
+    checkout_login();
 });
 
 // tab Type menu

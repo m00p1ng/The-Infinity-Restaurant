@@ -118,8 +118,9 @@ function check_length() {
 }
 
 function new_product() {
-    $('.add-new-product-button').click(function () {
-        $('.new-product-modal').modal({
+    $('#add-new-product-button').click(function () {
+        var chk;
+        $('#new-product-modal').modal({
             closable: false,
             onApprove: function () {
                 var name = $('#add-prod-name').val();
@@ -141,16 +142,29 @@ function new_product() {
                         text: text
                     },
                     chche: false,
-                    success: function (value) {}
+                    success: function (value) {
+                        var data = value.split(",");
+                        chk = data[0];
+                        $('.errorMsg').html(data[0]);
+                        if (data[0] == "Add product complete") {
+                            add_prod_complete();
+                        }
+                    }
                 });
-                $('.new-product-modal').modal('hide');
-                $('.new-product-complete').modal('show');
-                setTimeout(function () {
-                    location.reload();
-                }, 1500);
+                if (chk != "Add product complete") {
+                    return false;
+                }
             }
         }).modal('show');
     });
+}
+
+function add_prod_complete() {
+    $('#new-product-modal').modal('hide');
+    $('#new-product-complete').modal('show');
+    setTimeout(function () {
+        location.reload();
+    }, 1500);
 }
 
 $(document).ready(function () {

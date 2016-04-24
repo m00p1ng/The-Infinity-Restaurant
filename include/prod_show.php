@@ -1,5 +1,6 @@
 <?php
 require_once("inc.php");
+
 function get_product($type){
     if($type == ''){
         $query = query("SELECT * FROM product ORDER BY ProdID DESC");

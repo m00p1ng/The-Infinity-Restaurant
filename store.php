@@ -11,7 +11,7 @@ require_once("include/inc.php");
         include("include/menubar.php");
         include("include/form/product_buy.php");
         include("include/form/product_description.php");
-        include("include/product_store.php");
+        include("include/prod_show.php");
         ?>
             <div class="ui container">
                 <div class="ui top bilboard test ad" data-text="">
@@ -77,13 +77,24 @@ require_once("include/inc.php");
                                 </div>
                                 <h2>Total: $150</h2>
                                 <br />
-                                <a href="#" class="fluid ui red inverted button">Check Out!!</a>
+                                <?php 
+                                if(isset($_SESSION['username'])){
+                                    echo "<a href='#' class='fluid ui red inverted button'>Check Out!!</a>";
+                                }
+                                else {
+                                    echo "
+                                    <p>Please <a herf='#' id='checkout_login'>login</a></p>
+                                    <a href='#' class='fluid ui red inverted disabled button'>Check Out!!</a>
+                                    ";
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
             <?php include("include/footer.php") ?>
+                <script src="js/store.js"></script>
     </body>
 
 </html>

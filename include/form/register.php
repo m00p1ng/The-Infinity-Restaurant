@@ -31,7 +31,6 @@
                     </div>
                 </div>
             </div>
-            <br />
             <h4 class="ui dividing header">Personal Information</h4>
             <div class="field">
                 <label>Name</label>
@@ -52,16 +51,15 @@
                         <div class="default text">Type</div>
                         <i class="dropdown icon"></i>
                         <div class="menu">
-                            <div class="item" data-value="male">
+                            <div class="item" data-value="Male">
                                 <i class="large male icon"></i> Male
                             </div>
-                            <div class="item" data-value="female">
+                            <div class="item" data-value="Female">
                                 <i class="large female icon"></i> Female
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="field">
                 <label>Date of Birth</label>
@@ -205,7 +203,6 @@
                     </div>
                 </div>
             </div>
-            <br />
             <h4 class="ui dividing header">Billing Information</h4>
             <div class="field">
                 <label>Card Type</label>
@@ -276,7 +273,14 @@
                     </div>
                 </div>
             </div>
-            <button class="ui green button" id="Btn-submit" name="Btn-submit">Submit</button>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui deny button">
+            Cancel
+        </div>
+        <div class="ui positive green button">
+            Save
         </div>
     </div>
 </div>

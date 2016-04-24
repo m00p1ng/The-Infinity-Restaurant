@@ -28,7 +28,7 @@
                         if($_SESSION['userrole'] == 'Employee' || $_SESSION['userrole'] == 'Admin'){
                             echo "
                     <div class='header'>Manage</div>
-                    <a class='item' href='orderlist.php'><i class='tasks icon'></i>Orderlist</a>
+                    <a class='item' href='orderlist.php'><i class='tasks icon'></i>Order List</a>
                     <a class='item' href='editstore.php'><i class='shop icon'></i>Store</a>
                     <a class='item' href='customer.php'><i class='user icon'></i>Customer</a>";
                             if($_SESSION['userrole'] == 'Admin'){

@@ -1,5 +1,5 @@
 <?php 
-require_once("inc.php");
+require_once("../inc.php");
 
 $errors = [];
     
@@ -17,12 +17,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $address = clean($_POST['address']);
     $email = clean($_POST['email']);
     $phone = clean($_POST['phone']);
-    $card_type = clean($_POST['card_type']);
-    $card_number = clean($_POST['card_number']);
-    $card_cvc = clean($_POST['card_cvc']);
-    $exp_month = clean($_POST['exp_month']);
-    $exp_year = clean($_POST['exp_year']);
-    $expire = $exp_month."/".$exp_year;
+    $position = clean($_POST['position']);
+    $status = clean($_POST['status']);;
+    $note = clean($_POST['note']);;
 
     // Handling username
     if(empty($username)){
@@ -116,34 +113,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Invalid email format"; 
     }
-
-    // Handling Card
-    if(empty($card_type)){
-        $errors[] = "Please select card type";
-    }
-
-    if(empty($card_number)){
-        $errors[] = "Card number cannot empty";
-    }
-    else if(preg_match ("/[^0-9]/", $card_number)){
-        $errors[] = "Card number can contain only number";
-    }
-    else if(strlen($card_number) < 16){
-        $errors[] = "Please enter valid Card number";
+    
+    //Employee segment
+    if(empty($position)){
+        $errors[] = "Position cannot empty";
     }
     
-    if(empty($card_cvc)){
-        $errors[] = "CVC cannot empty";
-    }
-    else if(preg_match ("/[^0-9]/", $card_cvc)){
-        $errors[] = "CVC can contain only number";
-    }
-    else if(strlen($card_cvc) < 3){
-        $errors[] = "Please enter valid CVC";
-    }
-
-    if(empty($exp_month) || empty($exp_year)){
-        "Expiration cannot empty";
+    if(empty($status)){
+        $errors[] = "Status cannot empty";
     }
 
     if(!empty($errors)){
@@ -188,11 +165,11 @@ function register_user($username, $password, $email){
     global $lastname;
     global $birthday;
     global $phone;
-    global $card_type;
-    global $card_number;
-    global $expire;
     global $gender;
     global $address;
+    global $position;
+    global $status;
+    global $note;
     
     if(username_exist($username)){
         return false;
@@ -200,25 +177,24 @@ function register_user($username, $password, $email){
     else {
         $password = md5($password);
         $q = "INSERT INTO user(Username, UserPassword, UserEmail, UserRole) ";
-        $q .= "VALUES('$username', '$password', '$email', 'Customer')";
+        $q .= "VALUES('$username', '$password', '$email', 'Employee')";
         $result = query($q);
         confirm($result);
-        information_user($firstname, $lastname, $gender, $birthday, $phone, $username, $address, $card_type, $card_number, $expire);
+        information_user($firstname, $lastname, $gender, $birthday, $phone, $username, $address, $position, $status, $note);
     }
 }
 
-function information_user($firstname, $lastname, $gender, $dob, $phone, $username, $address, $credit_type, $credit_id, $expire){
+function information_user($firstname, $lastname, $gender, $birthday, $phone, $username, $address, $position, $status, $note){
     $firstname = escape_string($firstname);
     $lastname = escape_string($lastname);
     $gender = escape_string($gender);
-    $dob = escape_string($dob);
+    $birthday = escape_string($birthday);
     $phone = escape_string($phone);
     $username = escape_string($username);
     $address = escape_string($address);
-    $credit_type = escape_string($credit_type);
-    $credit_id = escape_string($credit_id);
-    $expire = escape_string($expire);
-    
+    $position = escape_string($position);
+    $status = escape_string($status);
+    $note = escape_string($note);
 
     $q = "SELECT * FROM user WHERE Username = '{$username}'";
     $result = query($q);
@@ -227,8 +203,8 @@ function information_user($firstname, $lastname, $gender, $dob, $phone, $usernam
     }
     $userid = $row['UserID'];
 
-    $q = "INSERT INTO customer(CustFirstName, CustLastname, CustGender, CustDOB, CustPhone, CustUser, CustAddress, CustCreditType, CustCreditID, CustCreditExp)";
-    $q .= " VALUES('$firstname', '$lastname', '$gender', '$dob', '$phone', '$userid', '$address', '$credit_type', '$credit_id', '$expire')";
+    $q = "INSERT INTO employee(EmpFirstName, EmpLastName, EmpGender, EmpDOB, EmpAddress, EmpPhone, EmpUser, EmpPosition, EmpStatus, EmpNote)";
+    $q .= " VALUES('{$firstname}', '{$lastname}', '{$gender}', {$birthday}, '{$address}', '{$phone}', {$userid}, '{$position}', '{$status}', '{$note}')";
     $result = query($q);
     confirm($result);
     

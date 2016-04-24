@@ -28,7 +28,7 @@ require_once("include/inc.php");
                                 <h1><i class='shop icon'></i>Store</h1>
                                 <div class="ui divider"></div>
 
-                                <div class="ui mall primary labeled icon button add-new-product-button">
+                                <div class="ui mall primary labeled icon button" id="add-new-product-button">
                                     <i class="plus icon"></i> Add&nbsp;Product
                                 </div>
 
@@ -90,6 +90,7 @@ EOD;
                     echo "<h1>เสือก!!!!</h1>";
                 }
                 ?>
+                        <script src="js/editstore.js"></script>
     </body>
 
 </html>

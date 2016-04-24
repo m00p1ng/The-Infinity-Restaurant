@@ -5,16 +5,11 @@ require_once("include/header.php");
 require_once("include/inc.php");
 ?>
 
-    <style>
-        td {
-            width: 146px;
-        }
-    </style>
-
     <body>
         <?php
         include("include/menubar.php");
         include("include/dialog_delete.php");
+        include("include/form/add_customer.php")
         ?>
             <div class="ui container">
                 <div class="ui grid" style="overflow-y:auto;white-space:nowrap;">
@@ -26,7 +21,7 @@ require_once("include/inc.php");
                             <h1><i class='user icon'></i>Customer</h1>
                             <div class="ui divider"></div>
 
-                            <div class="ui mall primary labeled icon button add-new-product-button">
+                            <div class="ui mall primary labeled icon button" id="add-new-customer-button">
                                 <i class="add user icon"></i> Add&nbsp;Customer
                             </div>
 
@@ -77,7 +72,7 @@ require_once("include/inc.php");
                                 <tfoot class="full-width">
                                     <tr>
                                         <th colspan="9">
-                                            <h2>Total: <?php echo $count_cust ?> Customer</h2>
+                                            <h2>Total: <?php echo $count_cust ?> customer</h2>
                                         </th>
                                     </tr>
                                 </tfoot>
@@ -86,6 +81,8 @@ require_once("include/inc.php");
                     </div>
                 </div>
             </div>
+            <script src="js/user.js"></script>
+            <script src="js/customer.js"></script>
             <?php include_once('include/footer.php'); ?>
     </body>
 

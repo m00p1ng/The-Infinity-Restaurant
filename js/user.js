@@ -17,7 +17,7 @@ function click_delete_customer() {
 function confirm_delete_customer(cust_id, user_id) {
     $.ajax({
         type: 'POST',
-        url: 'include/query_delete_customer.php',
+        url: 'include/query/delete_customer.php',
         data: {
             cust_id: cust_id,
             user_id: user_id
@@ -52,7 +52,7 @@ function click_delete_employee() {
 function confirm_delete_employee(emp_id, user_id) {
     $.ajax({
         type: 'POST',
-        url: 'include/query_delete_employee.php',
+        url: 'include/query/delete_employee.php',
         data: {
             emp_id: emp_id,
             user_id: user_id

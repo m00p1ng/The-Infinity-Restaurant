@@ -17,11 +17,11 @@
                     <input type="password" name="log-password" id="log-password" placeholder="Password" required>
                 </div>
             </div>
-            <div class="field">
-                <input class="ui right floated green button" name="log-submit" id="log-submit" type="submit" value="Login">
-            </div>
         </div>
     </div>
-    <br />
-    <br />
+    <div class="actions">
+        <div class="ui positive green button">
+            Login
+        </div>
+    </div>
 </div>
