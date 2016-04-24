@@ -204,7 +204,7 @@ function information_user($firstname, $lastname, $gender, $birthday, $phone, $us
     $userid = $row['UserID'];
 
     $q = "INSERT INTO employee(EmpFirstName, EmpLastName, EmpGender, EmpDOB, EmpAddress, EmpPhone, EmpUser, EmpPosition, EmpStatus, EmpNote)";
-    $q .= " VALUES('{$firstname}', '{$lastname}', '{$gender}', {$birthday}, '{$address}', '{$phone}', {$userid}, '{$position}', '{$status}', '{$note}')";
+    $q .= " VALUES('{$firstname}', '{$lastname}', '{$gender}', '{$birthday}', '{$address}', '{$phone}', {$userid}, '{$position}', '{$status}', '{$note}')";
     $result = query($q);
     confirm($result);
     

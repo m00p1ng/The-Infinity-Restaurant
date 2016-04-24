@@ -16,7 +16,7 @@ require_once("include/inc.php");
                     </div>
                     <div class="thirteen wide column">
                         <div class="ui segment">
-                            <h1>My Information</h1>
+                            <h1><i class='info icon'></i>My Information</h1>
                             <div class="ui divider"></div>
                             <div class="ui form">
                                 <?php

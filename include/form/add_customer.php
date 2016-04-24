@@ -7,25 +7,19 @@
             <div class="nine wide field">
                 <div class="field">
                     <label>Username</label>
-                    <div class="ui left icon input">
-                        <input type="text" name="username" id="username" value="" required>
-                    </div>
+                    <input type="text" name="username" id="username" value="" required>
                 </div>
             </div>
             <div class="nine wide field">
                 <div class="field">
                     <label>Password</label>
-                    <div class="ui left icon input">
-                        <input type="password" name="password" id="password" required>
-                    </div>
+                    <input type="password" name="password" id="password" required>
                 </div>
             </div>
             <div class="nine wide field">
                 <div class="field">
                     <label>Confirm Password</label>
-                    <div class="ui left icon input">
-                        <input type="password" name="con_password" id="con_password" required>
-                    </div>
+                    <input type="password" name="con_password" id="con_password" required>
                 </div>
             </div>
             <h4 class="ui dividing header">Personal Information</h4>
@@ -178,24 +172,18 @@
 
             <div class="field">
                 <label>Address</label>
-                <div class="ui left icon input">
-                    <input type="text" name="address" id="address" required>
-                </div>
+                <input type="text" name="address" id="address" required>
             </div>
             <div class="nine wide field">
                 <div class="field">
                     <label>Email</label>
-                    <div class="ui left icon input">
-                        <input type="email" value="" name="email" id="email" required>
-                    </div>
+                    <input type="email" value="" name="email" id="email" required>
                 </div>
             </div>
             <div class="nine wide field">
                 <div class="field">
                     <label>Phone</label>
-                    <div class="ui left icon input">
-                        <input type="text" name="phone" id="phone" value="" maxlength="12" required>
-                    </div>
+                    <input type="text" name="phone" id="phone" value="" maxlength="12" required>
                 </div>
             </div>
             <h4 class="ui dividing header">Billing Information</h4>

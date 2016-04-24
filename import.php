@@ -16,7 +16,7 @@ require_once("include/inc.php");
                     </div>
                     <div class="thirteen wide column">
                         <div class="ui segment">
-                            <h1><i class='history icon'></i>History</h1>
+                            <h1><i class="download icon"></i>Import Product</h1>
                             <div class="ui divider"></div>
                         </div>
                     </div>

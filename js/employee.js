@@ -1,3 +1,122 @@
+function click_delete_employee() {
+    $('.Delete_employee').click(function () {
+        var data = $(this).attr("value");
+        data = data.split('&');
+        var emp_id = data[0];
+        var user_id = data[1];
+        $('.confirm-delete-modal').modal({
+            closable: false,
+            onApprove: function () {
+                confirm_delete_employee(emp_id, user_id);
+            }
+        }).modal('show');
+    });
+}
+
+
+function confirm_delete_employee(emp_id, user_id) {
+    $.ajax({
+        type: 'POST',
+        url: 'include/query/delete_employee.php',
+        data: {
+            emp_id: emp_id,
+            user_id: user_id
+        },
+        cache: false,
+        success: function () {
+            $('.delete-complete').modal('show');
+            setTimeout(function () {
+                $('.delete-complete').modal('hide');
+                location.reload();
+            }, 1500);
+        }
+    });
+}
+
+function click_edit_employee() {
+    $('.Edit_employee').click(function () {
+        var id = $(this).attr("value");
+        $.ajax({
+            type: 'GET',
+            url: 'include/query/edit_employee.php',
+            data: 'edit_id=' + id,
+            cache: false,
+            success: function (value) {
+                var data = value.split(".,.");
+                $('#edit-firstname').attr('value', data[0]);
+                $('#edit-lastname').attr('value', data[1]);
+                $('#edit-gender').attr('value', data[2]);
+                $('#show-gender').html(data[2]);
+                var date = data[3].split('-');
+                $('#edit-dob-year').attr('value', date[0]);
+                $('#edit-dob-month').attr('value', date[1]);
+                $('#edit-dob-day').attr('value', date[2]);
+                $('#show-dob-year').html(date[0]);
+                $('#show-dob-month').html(date[1]);
+                $('#show-dob-day').html(date[2]);
+                $('#edit-username').attr('value', data[4]);
+                $('#edit-address').attr('value', data[5]);
+                $('#edit-phone').attr('value', data[6]);
+                $('#edit-position').attr('value', data[7]);
+                $('#show-position').html(data[7]);
+                $('#edit-status').attr('value', data[8]);
+                $('#show-status').html(data[8]);
+                $('#edit-note').html(data[9]);
+                $('#edit-email').attr('value', data[10]);
+            }
+        });
+
+        $('.edit-employee-modal').modal({
+            closable: false,
+            onApprove: function () {
+                var firstname = $("#edit-firstname").val();
+                var lastname = $("#edit-lastname").val();
+                var gender = $("#edit-gender").val();
+                var dob_day = $("#edit-dob-day").val();
+                var dob_month = $("#edit-dob-month").val();
+                var dob_year = $("#edit-dob-year").val();
+                var address = $("#edit-address").val();
+                var email = $("#edit-email").val();
+                var phone = $("#edit-phone").val();
+                var position = $("#edit-position").val();
+                var status = $("#edit-status").val();
+                var note = $('#edit-note').val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'include/query/edit_save_employee.php',
+                    data: {
+                        firstname: firstname,
+                        lastname: lastname,
+                        gender: gender,
+                        dob_day: dob_day,
+                        dob_month: dob_month,
+                        dob_year: dob_year,
+                        address: address,
+                        email: email,
+                        phone: phone,
+                        position: position,
+                        status: status,
+                        note: note,
+                        id: id
+                    },
+                    cache: false,
+                    success: function (value) {
+                        var data = value.split(",");
+                        chk = data[0];
+                        $('#errorMsg-edit-emp').html(data[0]);
+                        if (data[0] == "Registration complete") {
+                            edit_complete();
+                        }
+                    }
+                });
+                if (chk != "Registration complete") {
+                    return false;
+                }
+            }
+        }).modal('show');;
+    });
+}
+
 function new_employee() {
     $('#add-new-employee-button').click(function () {
         var chk;
@@ -65,6 +184,16 @@ function regis_complete() {
     }, 1500);
 }
 
+function edit_complete() {
+    $('.edit-employee-modal').modal('hide');
+    $('#edit-employee-complete').modal('show');
+    setTimeout(function () {
+        location.reload();
+    }, 1500);
+}
+
 $(document).ready(function () {
     new_employee();
+    click_delete_employee();
+    click_edit_employee();
 });

@@ -9,8 +9,8 @@ require_once("include/inc.php");
         <?php
         include("include/menubar.php");
         include("include/dialog_delete.php");
-        include("include/form/edit_employee.php");
         include("include/form/add_employee.php");
+        include("include/form/edit_employee.php");
         ?>
             <div class="ui container">
                 <div class="ui grid">
@@ -36,6 +36,7 @@ require_once("include/inc.php");
                                         <th>Date of Birth</th>
                                         <th>Username</th>
                                         <th>Address</th>
+                                        <th>Email</th>
                                         <th>Phone</th>
                                         <th>Position</th>
                                         <th>Status</th>
@@ -47,8 +48,7 @@ require_once("include/inc.php");
                                     <?php
                                     $result = query("SELECT * FROM employee ORDER BY EmpID DESC");
                                     confirm($result);
-//                                    
-//                                    
+                                    
                                     while($row = fetch_array($result)){
                                     $user = query("SELECT * FROM user WHERE UserID={$row['EmpUser']}");
                                     $user = fetch_array($user);
@@ -61,12 +61,13 @@ require_once("include/inc.php");
                                         <td>{$row['EmpDOB']}</td>
                                         <td>{$user['Username']}</td>
                                         <td>{$row['EmpAddress']}</td>
+                                        <td>{$user['UserEmail']}</td>
                                         <td>{$row['EmpPhone']}</td>
                                         <td>{$row['EmpPosition']}</td>
                                         <td>{$row['EmpStatus']}</td>
                                         <td>{$row['EmpNote']}</td>
                                         <td class='center aligned'>
-                                            <button class='ui icon button Edit_employee' value='{$row['EmpID']}''><i class='edit icon'></i></button>
+                                            <button class='ui icon button Edit_employee' value='{$row['EmpID']}'><i class='edit icon'></i></button>
                                             <button class='ui icon red button Delete_employee' value='{$row['EmpID']}&{$row['EmpUser']}'><i class='remove user icon'></i>
                                         </td>
                                     </tr>";              
@@ -87,7 +88,6 @@ require_once("include/inc.php");
                     </div>
                 </div>
             </div>
-            <script src="js/user.js"></script>
             <script src="js/employee.js"></script>
     </body>
 

@@ -9,7 +9,8 @@ require_once("include/inc.php");
         <?php
         include("include/menubar.php");
         include("include/dialog_delete.php");
-        include("include/form/add_customer.php")
+        include("include/form/add_customer.php");
+        include("include/form/edit_customer.php");
         ?>
             <div class="ui container">
                 <div class="ui grid" style="overflow-y:auto;white-space:nowrap;">
@@ -35,6 +36,7 @@ require_once("include/inc.php");
                                         <th>Date of Birth</th>
                                         <th>Username</th>
                                         <th>Address</th>
+                                        <th>Email</th>
                                         <th>Phone</th>
                                         <th></th>
                                     </tr>
@@ -57,6 +59,7 @@ require_once("include/inc.php");
                                         <td>{$row['CustDOB']}</td>
                                         <td>{$user['Username']}</td>
                                         <td>{$row['CustAddress']}</td>
+                                        <td>{$user['UserEmail']}</td>
                                         <td>{$row['CustPhone']}</td>
                                         <td class='center aligned'>
                                             <button class='ui icon button Edit_customer' value='{$row['CustID']}''><i class='edit icon'></i></button>
@@ -81,7 +84,6 @@ require_once("include/inc.php");
                     </div>
                 </div>
             </div>
-            <script src="js/user.js"></script>
             <script src="js/customer.js"></script>
             <?php include_once('include/footer.php'); ?>
     </body>

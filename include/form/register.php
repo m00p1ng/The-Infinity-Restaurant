@@ -226,11 +226,11 @@
             <div class="fields">
                 <div class="seven wide field">
                     <label>Card Number</label>
-                    <input type="text" name="card-number" id="card-number" maxlength="16" placeholder="Card #" value="" required>
+                    <input type="text" name="card-number" id="card-number" maxlength="16" placeholder="Card #" value="" required onkeypress='return event.charCode >= 48 && event.charCode <=57'>
                 </div>
                 <div class="three wide field">
                     <label>CVC</label>
-                    <input type="text" name="card-cvc" id="card-cvc" maxlength="3" placeholder="CVC" value="" required>
+                    <input type="text" name="card-cvc" id="card-cvc" maxlength="3" placeholder="CVC" value="" required onkeypress='return event.charCode >= 48 && event.charCode <=57'>
                 </div>
                 <div class="six wide field">
                     <label>Expiration</label>
