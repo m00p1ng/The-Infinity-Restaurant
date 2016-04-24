@@ -8,6 +8,7 @@ require_once("include/inc.php");
     <body>
         <?php
         include("include/menubar.php");
+        include("include/dialog_delete.php");
         ?>
             <div class="ui container">
                 <div class="ui grid">
@@ -16,7 +17,7 @@ require_once("include/inc.php");
                     </div>
                     <div class="thirteen wide column">
                         <div class="ui segment">
-                            <h1>User</h1>
+                            <h1><i class='users icon'></i>User</h1>
                             <div class="ui divider"></div>
                             <table class="ui compact celled table">
                                 <thead>
@@ -25,7 +26,6 @@ require_once("include/inc.php");
                                         <th>Username</th>
                                         <th>Type</th>
                                         <th>Email</th>
-                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -40,13 +40,20 @@ require_once("include/inc.php");
                                         <td>{$row['Username']}</td>
                                         <td>{$row['UserRole']}</td>
                                         <td>{$row['UserEmail']}</td>
-                                        <td class='center aligned'><button class='ui icon red button' value=''><i class='remove user icon'></i></td>
                                     </tr>";
                                         
                                     echo $product;
                                     }
+                                    $count_user = row_count($result);
                                     ?>
                                 </tbody>
+                                <tfoot class="full-width">
+                                    <tr>
+                                        <th colspan="12">
+                                            <h2>Total: <?php echo $count_user ?> User</h2>
+                                        </th>
+                                    </tr>
+                                </tfoot>
                             </table>
                         </div>
                     </div>

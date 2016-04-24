@@ -1,5 +1,5 @@
 <?php
-require_once("inc.php");
+require_once("../inc.php");
 if(isset($_GET['edit_id'])){
     $id = $_GET['edit_id'];
     $result = query("SELECT * FROM product WHERE ProdID={$id}");

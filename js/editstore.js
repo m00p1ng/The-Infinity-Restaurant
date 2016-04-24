@@ -2,7 +2,7 @@ function clickPreview() {
     $('.Preview-Product').click(function () {
         $.ajax({
             type: 'GET',
-            url: 'include/prodDesc_query.php',
+            url: 'include/query/prod_description.php',
             data: 'prod_id=' + $(this).attr("value"),
             cache: false,
             success: function (value) {
@@ -32,7 +32,7 @@ function confirmDelete(delete_id) {
     var $prod_id = delete_id;
     $.ajax({
         type: 'POST',
-        url: 'include/delete.php',
+        url: 'include/query/delete_product.php',
         data: {
             prod_id: $prod_id
         },
@@ -52,9 +52,9 @@ function clickEdit() {
         var id = $(this).attr("value");
         $.ajax({
             type: 'GET',
-            url: 'include/edit_query.php',
+            url: 'include/query/edit_prod.php',
             data: 'edit_id=' + id,
-            chche: false,
+            cache: false,
             success: function (value) {
                 var data = value.split(".,.");
                 $('#edit-prod-name').attr('value', data[0]);
@@ -80,7 +80,7 @@ function clickEdit() {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'include/edit_save_query.php',
+                    url: 'include/query/edit_save_prod.php',
                     data: {
                         id: id,
                         name: name,
@@ -131,7 +131,7 @@ function new_product() {
 
                 $.ajax({
                     type: 'POST',
-                    url: 'include/add_save_query.php',
+                    url: 'include/query/add_save_prod.php',
                     data: {
                         name: name,
                         picture: picture,

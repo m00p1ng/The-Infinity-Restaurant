@@ -10,6 +10,6 @@
     <script src="js/register.js"></script>
     <script src="js/login.js"></script>
     <script src="js/editstore.js"></script>
-    <script src="js/ckeditor/ckeditor.js"></script>
+    <script src="js/user.js"></script>
     <title>My Restaurant</title>
 </head>

@@ -46,8 +46,8 @@
             </div>
             <?php
             if(!isset($_SESSION['username'])){
-                include("include/form_login.php");
-                include("include/form_register.php"); 
+                include("include/form/login.php");
+                include("include/form/register.php"); 
             }
             ?>
         </div>

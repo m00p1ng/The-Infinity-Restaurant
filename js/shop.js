@@ -2,7 +2,7 @@ function clickDescription() {
     $(".btn-def-modal").click(function () {
         $.ajax({
             type: 'GET',
-            url: 'include/prodDesc_query.php',
+            url: 'include/query/prod_description.php',
             data: 'prod_id=' + $(this).attr("value"),
             cache: false,
             success: function (value) {
@@ -20,7 +20,7 @@ function clickBuy() {
     $(".btn-buy-modal").click(function () {
         $.ajax({
             type: 'GET',
-            url: 'include/prodBuy_query.php',
+            url: 'include/query/prod_buy.php',
             data: 'prod_id=' + $(this).attr("value"),
             cache: false,
             success: function (value) {
@@ -63,7 +63,7 @@ function searchProduct() {
         $('#show-all').addClass("active");
         $.ajax({
             type: 'GET',
-            url: 'include/search.php',
+            url: 'include/query/search_prod.php',
             data: 'name=' + $('#search-prod').val(),
             cache: false,
             success: function (data) {

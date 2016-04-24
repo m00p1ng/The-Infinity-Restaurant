@@ -9,8 +9,8 @@ require_once("include/inc.php");
     <body>
         <?php
         include("include/menubar.php");
-        include("include/form_product_buy.php");
-        include("include/form_product_description.php");
+        include("include/form/product_buy.php");
+        include("include/form/product_description.php");
         include("include/product_store.php");
         ?>
             <div class="ui container">

@@ -1,5 +1,5 @@
 <?php
-require_once('inc.php');
+require_once('../inc.php');
 
 if(isset($_GET['name'])){
     $name = $_GET['name'];

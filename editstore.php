@@ -11,10 +11,10 @@ require_once("include/inc.php");
         if($_SESSION['userrole'] == 'Admin' || $_SESSION['userrole'] == 'Employee'){ ?>
             <?php
             include("include/menubar.php");
-            include("include/form_product_description.php");
+            include("include/form/product_description.php");
             include("include/dialog_delete.php");
-            include("include/form_editproduct.php");
-            include("include/form_add_product.php");
+            include("include/form/edit_product.php");
+            include("include/form/add_product.php");
             ?>
                 <div class="ui container">
                     <div class="ui grid">
@@ -25,8 +25,13 @@ require_once("include/inc.php");
                         <div class="thirteen wide column">
 
                             <div class="ui segment">
-                                <h1>Store</h1>
+                                <h1><i class='shop icon'></i>Store</h1>
                                 <div class="ui divider"></div>
+
+                                <div class="ui mall primary labeled icon button add-new-product-button">
+                                    <i class="plus icon"></i> Add&nbsp;Product
+                                </div>
+
                                 <table class="ui compact celled table">
                                     <thead>
                                         <tr>
@@ -62,14 +67,14 @@ require_once("include/inc.php");
 EOD;
                                     echo $product;
                                     }
+                                    
+                                    $count_prod = row_count($result);
                                     ?>
                                     </tbody>
                                     <tfoot class="full-width">
                                         <tr>
                                             <th colspan="8">
-                                                <div class="ui right floated small primary labeled icon button add-new-product-button">
-                                                    <i class="plus icon"></i> Add Product
-                                                </div>
+                                                <h2>Total: <?php echo $count_prod ?> item</h2>
                                             </th>
                                         </tr>
                                     </tfoot>
@@ -78,7 +83,8 @@ EOD;
                         </div>
                     </div>
                 </div>
-                <?php }
+                <?php include_once('include/footer.php'); ?>
+                    <?php }
                 }
                 else{
                     echo "<h1>เสือก!!!!</h1>";
