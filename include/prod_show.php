@@ -1,20 +1,26 @@
 <?php
 require_once("inc.php");
 
+$count = 0;
+
 function get_product($type){
-    if($type == ''){
-        $query = query("SELECT * FROM product ORDER BY ProdID DESC");
+    global $count;
+    
+    if($type == 'All'){
+        $query = "SELECT * FROM product ORDER BY ProdID DESC ";
     }
     else{
-        $query = query("SELECT * FROM product WHERE ProdType='{$type}' ORDER BY ProdID DESC");
+        $query = "SELECT * FROM product WHERE ProdType='{$type}' ORDER BY ProdID DESC ";
     }
-    confirm($query);
     
-    while($row = fetch_array($query)){
+    $result = query($query);
+    confirm($result);
+    
+    while($row = fetch_array($result)){
         $des_sub = substr($row['ProdDescription'], 0, 100);
         echo "
         <div class='card'>
-            <div class='ui bottom right blue attached label'>\${$row['ProdPricePerUnit']}.00</div>
+            <div class='ui bottom right blue attached label'>฿ {$row['ProdPricePerUnit']}.00</div>
             <div class='blurring dimmable image'>
                 <div class='ui dimmer'>
                     <div class='content'>

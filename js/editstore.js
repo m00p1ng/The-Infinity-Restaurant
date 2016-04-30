@@ -141,7 +141,7 @@ function new_product() {
                         type: type,
                         text: text
                     },
-                    chche: false,
+                    cache: false,
                     success: function (value) {
                         var data = value.split(",");
                         chk = data[0];

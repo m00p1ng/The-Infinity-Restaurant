@@ -8,18 +8,21 @@ require_once("include/inc.php");
     <body>
         <?php
         include("include/menubar.php");
+        include("include/form/change_password.php");
         ?>
-            <div class="ui container">
-                <div class="ui grid">
-                    <div class="three wide column">
-                        <?php include_once("include/sidebar_config.php"); ?>
-                    </div>
-                    <div class="thirteen wide column">
-                        <div class="ui segment">
-                            <h1><i class='info icon'></i>My Information</h1>
-                            <div class="ui divider"></div>
-                            <div class="ui form">
-                                <?php
+            <div id="wrap">
+                <div id="main">
+                    <div class="ui container">
+                        <div class="ui grid">
+                            <div class="three wide column">
+                                <?php include_once("include/sidebar_config.php"); ?>
+                            </div>
+                            <div class="thirteen wide column">
+                                <div class="ui segment">
+                                    <h1><i class='info icon'></i>My Information</h1>
+                                    <div class="ui divider"></div>
+                                    <div class="ui form">
+                                        <?php
                                 $search_userid = query("SELECT * FROM user WHERE Username='{$_SESSION['username']}'");
                                 confirm($search_userid);
                                 $result_search = fetch_array($search_userid);
@@ -109,22 +112,22 @@ require_once("include/inc.php");
                                     </div>";
                                 if($_SESSION['userrole'] == 'Employee'){
                                     echo "
-                                    <div class='three wide field'>
+                                    <div class='four wide field'>
                                         <div class='field'>
                                             <label>Position</label>
-                                            <input type='text' value='{$row['EmpPosition']}'>
+                                            <input type='text' value='{$row['EmpPosition']}' disabled>
                                         </div>
                                     </div>
-                                    <div class='five wide field'>
+                                    <div class='four wide field'>
                                         <div class='field'>
                                             <label>Status</label>
-                                            <input type='text' value='{$row['EmpStatus']}'>
+                                            <input type='text' value='{$row['EmpStatus']}' disabled>
                                         </div>
                                     </div>
                                     <div class='twelve wide field'>
                                         <div class='field'>
                                             <label>Note</label>
-                                            <textarea>{$row['EmpNote']}</textarea>
+                                            <textarea disabled>{$row['EmpNote']}</textarea>
                                         </div>
                                     </div>";
                                 }
@@ -150,9 +153,11 @@ require_once("include/inc.php");
                                     </div>";
                                     }
                                 ?>
-                                    <div class="field">
-                                        <input type="submit" class="ui green button">
+                                            <div class="field">
+                                                <input type="submit" class="ui green button">
+                                            </div>
                                     </div>
+                                </div>
                             </div>
                         </div>
                     </div>

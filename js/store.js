@@ -20,6 +20,7 @@ function clickBuy() {
     $(".btn-buy-modal").click(function () {
         var id = $(this).attr("value");
         $('#errorMsg-addtocart').html("");
+        $('#BuyTotal').prop('value', "1");
         $.ajax({
             type: 'GET',
             url: 'include/query/prod_buy.php',
@@ -58,6 +59,7 @@ function AddtoCart() {
                 if (data[1] == 1) {
                     $(".item-buy-modal").modal("hide");
                     $('#show-prod-cart').append(data[2]);
+                    $('#Prod-total').html(data[3]);
                     CloseMsg();
                 }
             }

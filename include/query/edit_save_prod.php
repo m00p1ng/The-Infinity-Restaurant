@@ -1,5 +1,5 @@
 <?php
-include_once("inc.php");
+include_once("../inc.php");
 if(isset($_SESSION['userrole']) && ($_SESSION['userrole'] == 'Admin' ||$_SESSION['userrole'] == 'Employee')){
     if(isset($_POST['id']) && isset($_POST['name']) && isset($_POST['picture']) && isset($_POST['amount']) && isset($_POST['price']) && isset($_POST['type']) && isset($_POST['text'])){
         $id = escape_string(clean($_POST['id']));

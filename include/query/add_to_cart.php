@@ -16,22 +16,23 @@ if(isset($_GET['prod_id']) && isset($_GET['prod_amount'])){
     if($row['ProdAmount'] >= ($_SESSION['product_' . $id] + $amount)){
         $_SESSION['product_' . $id] += $amount;
         $total_price = $amount*$row['ProdPricePerUnit'];
+        $_SESSION['product_total'] += $total_price;
         $add_prod = "
         <div class='ui message'>
             <i class='close icon'></i>
             <div class='header'>
                 {$row['ProdName']} ( {$amount} )
             </div>
-            <p>Total: \${$total_price}</p>
+            <p>Total: ฿ {$total_price}</p>
         </div>";
 
         echo "
-        <div class='ui success message'>
+        <div class='ui success message' data-value='{$id}'>
             <div class='header'>
             Item was added in your cart
             </div>
         </div>
-        <p></p>.,.1" . ".,." . $add_prod;
+        <p></p>.,.1" . ".,." . $add_prod . ".,." . $_SESSION['product_total'];
     }
     else{
         echo "

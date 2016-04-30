@@ -34,9 +34,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     else if(strlen($username) > 20){
         $errors[] = "Username cannot be more tahn 20 charracters";
     }
-    else if (!preg_match("/^[a-z0-9]*$/",$username)) {
-        $errors[] = "Username can only contain lower letters or digits"; 
-    }
     else if(username_exist($username)){
         $errors[] = "Sorry This username already exist";
     }

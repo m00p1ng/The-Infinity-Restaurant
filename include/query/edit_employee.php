@@ -11,7 +11,7 @@ if(isset($_GET['edit_id'])){
         $lastname = $row['EmpLastName'];
         $gender = $row['EmpGender'];
         $birthday = $row['EmpDOB'];
-        $users = query("SELECT * FROM User WHERE UserID={$row['EmpUser']}");
+        $users = query("SELECT * FROM user WHERE UserID={$row['EmpUser']}");
         $user = fetch_array($users);
         $username = $user['Username'];
         $address = $row['EmpAddress'];
@@ -22,6 +22,9 @@ if(isset($_GET['edit_id'])){
         $email = $user['UserEmail'];
         
         echo $firstname . ".,." . $lastname . ".,." . $gender . ".,." . $birthday . ".,." . $username . ".,." . $address . ".,." . $phone . ".,." . $position . ".,." . $status . ".,." . $note . ".,." . $email;
+    }
+    else {
+        die();
     }
 }
 else{

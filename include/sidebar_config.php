@@ -13,8 +13,14 @@
             echo "
             <div class='header item'>MANAGE</div>
             <a class='item' href='orderlist.php'><i class='tasks icon'></i>Order List</a>
-            <a class='item' href='editstore.php'><i class='shop icon'></i>Store</a>
-            <a class='item' href='import.php'><i class='download icon'></i>Import Product</a>
+            <div class='ui dropdown item'>
+                <i class='dropdown icon'></i> Store
+                <div class='menu'>
+                    <a class='item' href='product.php'>Product</a>
+                    <a class='item' href='import.php'>Import</a>
+                    <a class='item' href='manufacture.php'>Manufacture</a>
+                </div>
+            </div>
             <a class='item' href='customer.php'><i class='user icon'></i>Customer</a>";
             if($_SESSION['userrole'] == 'Admin'){
                 echo "

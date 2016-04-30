@@ -1,6 +1,6 @@
-<nav class="ui brown top fixed inverted menu">
+<nav class="ui brown top fixed inverted menu" id="header">
     <div class="ui container">
-        <a class="item nav-menu" href='index.php'><b><i class="food icon"></i>RESTAURANT</b></a>
+        <a class="item nav-menu" href='index.php'><b><i class="food icon"></i>THE INFINITY</b></a>
         <a class="item nav-menu" href='menu.php'>MENU</a>
         <a class="item nav-menu" href='chief.php'>CHEF PROFILE</a>
         <a class="item nav-menu" href='about.php'>ABOUT US</a>
@@ -29,8 +29,14 @@
                             echo "
                     <div class='header'>Manage</div>
                     <a class='item' href='orderlist.php'><i class='tasks icon'></i>Order List</a>
-                    <a class='item' href='editstore.php'><i class='shop icon'></i>Store</a>
-                    <a class='item' href='import.php'><i class='download icon'></i>Import Product</a>
+                    <div class='item'>
+                        <i class='left dropdown icon'></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Store
+                        <div class='left menu'>
+                            <a class='item' href='product.php'>Product</a>
+                            <a class='item' href='import.php'>Import</a>
+                            <a class='item' href='manufacture.php'>Manufacture</a>
+                        </div>
+                    </div>
                     <a class='item' href='customer.php'><i class='user icon'></i>Customer</a>";
                             if($_SESSION['userrole'] == 'Admin'){
                                 echo"
