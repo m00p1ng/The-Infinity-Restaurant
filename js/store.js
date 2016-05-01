@@ -128,7 +128,12 @@ function Add_Minus() {
 
 function CloseMsg() {
     $('.message .close').on('click', function () {
-        $(this).closest('.message').transition('fade');
+        $(this).closest('')
+            //        $.ajax({
+            //            
+            //        });
+
+        $(this).closest('.message').remove();
     });
 }
 

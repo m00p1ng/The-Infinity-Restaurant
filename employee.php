@@ -72,7 +72,7 @@ require_once("include/inc.php");
                                         <td>{$row['EmpStatus']}</td>
                                         <td>{$row['EmpNote']}</td>
                                         <td class='center aligned'>
-                                            <button class='ui icon button Edit_employee' value='{$row['EmpID']}'><i class=write icon'></i></button>
+                                            <button class='ui icon button Edit_employee' value='{$row['EmpID']}'><i class='write icon'></i></button>
                                             <button class='ui icon red button Delete_employee' value='{$row['EmpID']}&{$row['EmpUser']}'><i class='remove user icon'></i>
                                         </td>
                                     </tr>";              

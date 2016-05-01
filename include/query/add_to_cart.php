@@ -1,6 +1,10 @@
 <?php 
 require_once("../inc.php");
 
+if(!isset($_SESSION['check_prod'])){
+    $_SESSION['check_prod'] = [];
+}
+
 if(isset($_GET['prod_id']) && isset($_GET['prod_amount'])){
     $id = escape_string(clean($_GET['prod_id']));
     $amount = escape_string(clean($_GET['prod_amount']));
@@ -21,9 +25,9 @@ if(isset($_GET['prod_id']) && isset($_GET['prod_amount'])){
         <div class='ui message'>
             <i class='close icon'></i>
             <div class='header'>
-                {$row['ProdName']} ( {$amount} )
+                {$row['ProdName']} <span id='amount_{$id}' value='{$amount}'>( {$amount} )</span>
             </div>
-            <p>Total: ฿ {$total_price}</p>
+            <p>Total: ฿ <span id='total_{$id}' value='{$total_price}'>{$total_price}</span></p>
         </div>";
 
         echo "
