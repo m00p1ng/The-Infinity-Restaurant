@@ -11,7 +11,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $dob_month = clean($_POST['dob_month']);
     $dob_year = clean($_POST['dob_year']);
     $birthday = $dob_year."-".$dob_month."-".$dob_day;
-    $address = clean($_POST['address']);
+    $street = clean($_POST['street']);
+    $city = clean($_POST['city']);
+    $state = clean($_POST['state']);
+    $zip = clean($_POST['zip']);
     $email = clean($_POST['email']);
     $phone = clean($_POST['phone']);
     $card_type = clean($_POST['card_type']);
@@ -61,21 +64,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     else if(!checkdate($dob_month, $dob_day, $dob_year)){
         $errors[] = "Please enter valid birthday";
     }   
-
-    // Handling Address
-    if(empty($address)){
-        $errors[] = "Address cannot empty";
-    }
-    else if(strlen($address) < 10){
-        $errors[] = "Address cannot be less than 10 characters";
-    }
-    
-    if(empty($phone)){
-        $errors[] = "Phone number cannot empty";
-    }
-    else if(strlen($phone) < 9){
-        $error[] = "Please enter valid number";
-    }
 
     if(empty($email)){
         $errors[] = "Email cannot empty";
@@ -127,7 +115,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <br />";
     }
     else{
-        $q = "UPDATE customer SET CustFirstName='{$firstname}', CustLastName='{$lastname}', CustGender='{$gender}', CustDOB='{$birthday}', CustAddress='{$address}', CustPhone='{$phone}', CustCreditType='{$card_type}', CustCreditID='{$card_number}', CustCreditExp='{$expire}' WHERE CustID={$id}";
+        $q = "UPDATE customer SET CustFirstName='{$firstname}', CustLastName='{$lastname}', CustGender='{$gender}', CustDOB='{$birthday}', CustPhone='{$phone}', CustCreditType='{$card_type}', CustCreditID='{$card_number}', CustCreditExp='{$expire}', CustStreet='{$street}', CustCity='{$city}', CustState='{$state}', CustZip='{$zip}' WHERE CustID={$id}";
         
         $result = query($q);
         

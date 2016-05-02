@@ -4,7 +4,10 @@ function Click_add_manu() {
             closable: false,
             onApprove: function () {
                 var name = $('#manu-name').val();
-                var address = $('#manu-address').val();
+                var street = $('#manu-street').val();
+                var city = $('#manu-city').val();
+                var state = $('#manu-state').val();
+                var zip = $('#manu-zip').val();
                 var email = $('#manu-email').val();
                 var phone = $('#manu-phone').val();
 
@@ -13,7 +16,10 @@ function Click_add_manu() {
                     url: 'include/query/add_save_manu.php',
                     data: {
                         name: name,
-                        address: address,
+                        street: street,
+                        city: city,
+                        state: state,
+                        zip: zip,
                         email: email,
                         phone: phone
                     },

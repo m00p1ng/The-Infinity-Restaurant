@@ -17,6 +17,7 @@
                 <i class='dropdown icon'></i> Store
                 <div class='menu'>
                     <a class='item' href='product.php'>Product</a>
+                    <a class='item' href='promotion.php'>Promotion</a>
                     <a class='item' href='import.php'>Import</a>
                     <a class='item' href='manufacture.php'>Manufacture</a>
                 </div>

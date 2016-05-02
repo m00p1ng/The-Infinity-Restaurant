@@ -13,7 +13,10 @@ $(document).ready(function () {
                 var dob_day = $("#dob-day").val();
                 var dob_month = $("#dob-month").val();
                 var dob_year = $("#dob-year").val();
-                var address = $("#address").val();
+                var street = $("#street").val();
+                var city = $("#city").val();
+                var state = $("#state").val();
+                var zip = $("#zip").val();
                 var email = $("#email").val();
                 var phone = $("#phone").val();
                 var card_type = $("#card-type").val();
@@ -35,7 +38,10 @@ $(document).ready(function () {
                         dob_day: dob_day,
                         dob_month: dob_month,
                         dob_year: dob_year,
-                        address: address,
+                        street: street,
+                        city: city,
+                        state: state,
+                        zip: zip,
                         email: email,
                         phone: phone,
                         card_type: card_type,

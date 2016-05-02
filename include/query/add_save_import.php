@@ -16,7 +16,7 @@ $import_time = $import_hour.":".$import_minute.":00";
 
 $prod_name = [];
 $prod_price = [];
-$total_prod_price = 0;
+$total_prod_price = $import_cost;
 for($i = 0; $i < 10; $i++){
     if(!empty($import_product[$i]) && !empty($import_amount[$i]) && !empty($import_manu[$i])){
         $id = $import_product[$i];
@@ -49,7 +49,7 @@ for($i = 0; $i < sizeof($prod_price); $i++){
     $row = fetch_array($result);
     
     $query2 = "INSERT INTO productimport(ProdImProdID, ProdImImpID, ProdImAmount, ProdImManuID, ProdImCost) ";
-    $query2 .= "VALUES({$prod_id}, {$row['ImpID']}, {$prod_price[$i]}, {$manu}, {$import_cost})";
+    $query2 .= "VALUES({$prod_id}, {$row['ImpID']}, {$amount}, {$manu}, {$prod_price[$i]})";
     
     $result2 = query($query2);
     confirm($result2);

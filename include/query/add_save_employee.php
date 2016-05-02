@@ -14,12 +14,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $dob_month = clean($_POST['dob_month']);
     $dob_year = clean($_POST['dob_year']);
     $birthday = $dob_year."-".$dob_month."-".$dob_day;
-    $address = clean($_POST['address']);
     $email = clean($_POST['email']);
     $phone = clean($_POST['phone']);
     $position = clean($_POST['position']);
-    $status = clean($_POST['status']);;
-    $note = clean($_POST['note']);;
+    $status = clean($_POST['status']);
+    $note = clean($_POST['note']);
+    $street = clean($_POST['street']);
+    $city = clean($_POST['city']);
+    $state = clean($_POST['state']);
+    $zip = clean($_POST['zip']);
 
     // Handling username
     if(empty($username)){
@@ -88,14 +91,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     else if(!checkdate($dob_month, $dob_day, $dob_year)){
         $errors[] = "Please enter valid birthday";
     }   
-
-    // Handling Address
-    if(empty($address)){
-        $errors[] = "Address cannot empty";
-    }
-    else if(strlen($address) < 10){
-        $errors[] = "Address cannot be less than 10 characters";
-    }
     
     if(empty($phone)){
         $errors[] = "Phone number cannot empty";
@@ -167,6 +162,10 @@ function register_user($username, $password, $email){
     global $position;
     global $status;
     global $note;
+    global $street;
+    global $city;
+    global $state;
+    global $zip;
     
     if(username_exist($username)){
         return false;
@@ -177,11 +176,11 @@ function register_user($username, $password, $email){
         $q .= "VALUES('$username', '$password', '$email', 'Employee')";
         $result = query($q);
         confirm($result);
-        information_user($firstname, $lastname, $gender, $birthday, $phone, $username, $address, $position, $status, $note);
+        information_user($firstname, $lastname, $gender, $birthday, $phone, $username, $address, $position, $status, $note, $street, $state, $city, $zip);
     }
 }
 
-function information_user($firstname, $lastname, $gender, $birthday, $phone, $username, $address, $position, $status, $note){
+function information_user($firstname, $lastname, $gender, $birthday, $phone, $username, $address, $position, $status, $note, $street, $state, $city, $zip){
     $firstname = escape_string($firstname);
     $lastname = escape_string($lastname);
     $gender = escape_string($gender);
@@ -192,7 +191,11 @@ function information_user($firstname, $lastname, $gender, $birthday, $phone, $us
     $position = escape_string($position);
     $status = escape_string($status);
     $note = escape_string($note);
-
+    $street =escape_string($street);
+    $state =escape_string($state);
+    $city =escape_string($city);
+    $zip =escape_string($zip);
+    
     $q = "SELECT * FROM user WHERE Username = '{$username}'";
     $result = query($q);
     if($result){
@@ -200,8 +203,8 @@ function information_user($firstname, $lastname, $gender, $birthday, $phone, $us
     }
     $userid = $row['UserID'];
 
-    $q = "INSERT INTO employee(EmpFirstName, EmpLastName, EmpGender, EmpDOB, EmpAddress, EmpPhone, EmpUser, EmpPosition, EmpStatus, EmpNote)";
-    $q .= " VALUES('{$firstname}', '{$lastname}', '{$gender}', '{$birthday}', '{$address}', '{$phone}', {$userid}, '{$position}', '{$status}', '{$note}')";
+    $q = "INSERT INTO employee(EmpFirstName, EmpLastName, EmpGender, EmpDOB, EmpPhone, EmpUser, EmpPosition, EmpStatus, EmpNote, EmpStreet, EmpCity, EmpState, EmpZip)";
+    $q .= " VALUES('{$firstname}', '{$lastname}', '{$gender}', '{$birthday}', '{$phone}', {$userid}, '{$position}', '{$status}', '{$note}', '{$street}', '{$city}', '{$state}', '{$zip}')";
     $result = query($q);
     confirm($result);
     

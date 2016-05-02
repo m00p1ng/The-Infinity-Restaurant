@@ -203,7 +203,7 @@
                 $out_product .= "<option value='{$row['ProdID']}'>{$row['ProdName']}</option>";
             }
             
-            $result = query("SELECT ManuID, ManuName FROM Manufacturer");
+            $result = query("SELECT ManuID, ManuName FROM manufacturer");
             
            while($row = fetch_array($result)){
                 $out_manu .= "<option value='{$row['ManuID']}'>{$row['ManuName']}</option>";

@@ -10,7 +10,7 @@ require_once("include/inc.php");
         if(isset($_SESSION['userrole'])){
             if($_SESSION['userrole'] == 'Admin' || $_SESSION['userrole'] == 'Employee'){ 
             include("include/menubar.php");
-            include("include/form/add_manu.php");
+            include("include/form/add_promotion.php");
         ?>
 
             <div id="wrap">
@@ -21,58 +21,50 @@ require_once("include/inc.php");
                                 <?php include_once("include/sidebar_config.php"); ?>
                             </div>
                             <div class="thirteen wide column">
-                                <div class="ui segment" style="overflow-y:auto;white-space:nowrap;">
-                                    <h1><i class='shipping icon'></i>Manufacture</h1>
+                                <div class="ui segment">
+                                    <h1><i class='tag icon'></i>Promotion</h1>
                                     <div class="ui divider"></div>
-                                    <div class="ui mall primary labeled icon button" id="add-new-manu-button">
-                                        <i class="plus icon"></i> Add&nbsp;Manufacture
+                                    <div class="ui mall primary labeled icon button" id="add-new-promo-button">
+                                        <i class="plus icon"></i> Add&nbsp;Promotion
                                     </div>
                                     <table class="ui compact celled table">
                                         <thead>
                                             <tr>
                                                 <th>ID</th>
                                                 <th>Name</th>
-                                                <th>Street</th>
-                                                <th>City</th>
-                                                <th>State</th>
-                                                <th>Zip</th>
-                                                <th>Phone</th>
-                                                <th>Email</th>
+                                                <th>CutPrice(%)</th>
+                                                <th>Time Interval</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                    $result = query("SELECT * FROM manufacturer ORDER BY ManuID DESC");
+                                    $result = query("SELECT * FROM promotion ORDER BY PromoID DESC");
                                     confirm($result);
                                     
                                     
                                     while($row = fetch_array($result)){
-                                    $manu ="
+                                    $promo ="
                                     <tr>
-                                        <td>{$row['ManuID']}</td>
-                                        <td>{$row['ManuName']}</td>
-                                        <td>{$row['ManuStreet']}</td>
-                                        <td>{$row['ManuCity']}</td>
-                                        <td>{$row['ManuState']}</td>
-                                        <td>{$row['ManuZip']}</td>
-                                        <td>{$row['ManuPhone']}</td>
-                                        <td>{$row['ManuEmail']}</td>
+                                        <td>{$row['PromoID']}</td>
+                                        <td>{$row['PromoName']}</td>
+                                        <td>{$row['PromoCutPrice']}</td>
+                                        <td>{$row['PromoInterval']}</td>
                                         <td class='center aligned'>
                                             <button class='ui icon button' value=''><i class='write icon'></i></button>
                                             <button class='ui icon red button' value=''><i class='trash outline icon'></i>
                                         </td>
                                     </tr>";              
-                                    echo $manu;
+                                    echo $promo;
                                     }
                                     
-                                    $count_manu = row_count($result);
+                                    $count_promo = row_count($result);
                                     ?>
                                         </tbody>
                                         <tfoot class="full-width">
                                             <tr>
                                                 <th colspan="10">
-                                                    <h2>Total: <?php echo $count_manu ?> manufacture</h2>
+                                                    <h2>Total: <?php echo $count_promo ?> promotion</h2>
                                                 </th>
                                             </tr>
                                         </tfoot>
@@ -83,7 +75,7 @@ require_once("include/inc.php");
                     </div>
                 </div>
             </div>
-            <script src="js/manu.js"></script>
+            <script src="js/promotion.js"></script>
             <?php include("include/footer.php") ?>
                 <?php 
                 }

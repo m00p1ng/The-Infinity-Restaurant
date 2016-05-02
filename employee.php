@@ -40,7 +40,10 @@ require_once("include/inc.php");
                                                 <th>Gender</th>
                                                 <th>Date of Birth</th>
                                                 <th>Username</th>
-                                                <th>Address</th>
+                                                <th>Street</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Zip</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th>Position</th>
@@ -65,7 +68,10 @@ require_once("include/inc.php");
                                         <td>{$row['EmpGender']}</td>
                                         <td>{$row['EmpDOB']}</td>
                                         <td>{$user['Username']}</td>
-                                        <td>{$row['EmpAddress']}</td>
+                                        <td>{$row['EmpStreet']}</td>
+                                        <td>{$row['EmpCity']}</td>
+                                        <td>{$row['EmpState']}</td>
+                                        <td>{$row['EmpZip']}</td>
                                         <td>{$user['UserEmail']}</td>
                                         <td>{$row['EmpPhone']}</td>
                                         <td>{$row['EmpPosition']}</td>
@@ -83,7 +89,7 @@ require_once("include/inc.php");
                                         </tbody>
                                         <tfoot class="full-width">
                                             <tr>
-                                                <th colspan="13">
+                                                <th colspan="16">
                                                     <h2>Total: <?php echo $count_emp ?> employee</h2>
                                                 </th>
                                             </tr>

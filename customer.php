@@ -40,7 +40,10 @@ require_once("include/inc.php");
                                                 <th>Gender</th>
                                                 <th>Date of Birth</th>
                                                 <th>Username</th>
-                                                <th>Address</th>
+                                                <th>Street</th>
+                                                <th>City</th>
+                                                <th>State</th>
+                                                <th>Zip</th>
                                                 <th>Email</th>
                                                 <th>Phone</th>
                                                 <th></th>
@@ -63,7 +66,10 @@ require_once("include/inc.php");
                                         <td>{$row['CustGender']}</td>
                                         <td>{$row['CustDOB']}</td>
                                         <td>{$user['Username']}</td>
-                                        <td>{$row['CustAddress']}</td>
+                                        <td>{$row['CustStreet']}</td>
+                                        <td>{$row['CustCity']}</td>
+                                        <td>{$row['CustState']}</td>
+                                        <td>{$row['CustZip']}</td>
                                         <td>{$user['UserEmail']}</td>
                                         <td>{$row['CustPhone']}</td>
                                         <td class='center aligned'>
@@ -79,7 +85,7 @@ require_once("include/inc.php");
                                         </tbody>
                                         <tfoot class="full-width">
                                             <tr>
-                                                <th colspan="10">
+                                                <th colspan="13">
                                                     <h2>Total: <?php echo $count_cust ?> customer</h2>
                                                 </th>
                                             </tr>

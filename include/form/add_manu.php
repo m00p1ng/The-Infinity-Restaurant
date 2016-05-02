@@ -11,7 +11,28 @@
             </div>
             <div class="field">
                 <label>Address</label>
-                <input type="text" id="manu-address">
+            </div>
+            <div class="fields">
+                <div class="four wide field">
+                    <div class="field">
+                        <input type="text" name="manu-street" id="manu-street" placeholder="Street" required>
+                    </div>
+                </div>
+                <div class="four wide field">
+                    <div class="field">
+                        <input type="text" name="manu-city" id="manu-city" placeholder="City" required>
+                    </div>
+                </div>
+                <div class="five wide field">
+                    <div class="field">
+                        <input type="text" name="manu-state" id="manu-state" placeholder="State" required>
+                    </div>
+                </div>
+                <div class="three wide field">
+                    <div class="field">
+                        <input type="text" name="manu-zip" id="manu-zip" placeholder="Zip" required>
+                    </div>
+                </div>
             </div>
             <div class="six wide field">
                 <div class="field">

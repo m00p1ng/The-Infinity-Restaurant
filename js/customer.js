@@ -55,9 +55,12 @@ function click_edit_customer() {
                 $('#show-dob-month').html(date[1]);
                 $('#show-dob-day').html(date[2]);
                 $('#edit-username').attr('value', data[4]);
-                $('#edit-address').attr('value', data[5]);
-                $('#edit-phone').attr('value', data[6]);
-                $('#edit-email').attr('value', data[7]);
+                $('#edit-phone').attr('value', data[5]);
+                $('#edit-email').attr('value', data[6]);
+                $('#edit-street').attr('value', data[7]);
+                $('#edit-city').attr('value', data[8]);
+                $('#edit-state').attr('value', data[9]);
+                $('#edit-zip').attr('value', data[10]);
             }
         });
 
@@ -70,7 +73,6 @@ function click_edit_customer() {
                 var dob_day = $("#edit-dob-day").val();
                 var dob_month = $("#edit-dob-month").val();
                 var dob_year = $("#edit-dob-year").val();
-                var address = $("#edit-address").val();
                 var email = $("#edit-email").val();
                 var phone = $("#edit-phone").val();
                 var card_type = $("#edit-card-type").val();
@@ -78,6 +80,10 @@ function click_edit_customer() {
                 var card_cvc = $("#edit-card-cvc").val();
                 var exp_month = $('#edit-exp-month').val();
                 var exp_year = $('#edit-exp-year').val();
+                var street = $("#edit-street").val();
+                var city = $("#edit-city").val();
+                var state = $("#edit-state").val();
+                var zip = $("#edit-zip").val();
                 $.ajax({
                     type: 'POST',
                     url: 'include/query/edit_save_customer.php',
@@ -88,7 +94,6 @@ function click_edit_customer() {
                         dob_day: dob_day,
                         dob_month: dob_month,
                         dob_year: dob_year,
-                        address: address,
                         email: email,
                         phone: phone,
                         card_type: card_type,
@@ -96,7 +101,11 @@ function click_edit_customer() {
                         card_cvc: card_cvc,
                         exp_month: exp_month,
                         exp_year: exp_year,
-                        id: id
+                        id: id,
+                        street: street,
+                        city: city,
+                        state: state,
+                        zip: zip
                     },
                     cache: false,
                     success: function (value) {
@@ -131,7 +140,10 @@ function new_customer() {
                 var dob_day = $("#dob-day").val();
                 var dob_month = $("#dob-month").val();
                 var dob_year = $("#dob-year").val();
-                var address = $("#address").val();
+                var street = $("#street").val();
+                var city = $("#city").val();
+                var state = $("#state").val();
+                var zip = $("#zip").val();
                 var email = $("#email").val();
                 var phone = $("#phone").val();
                 var card_type = $("#card-type").val();
@@ -153,7 +165,10 @@ function new_customer() {
                         dob_day: dob_day,
                         dob_month: dob_month,
                         dob_year: dob_year,
-                        address: address,
+                        street: street,
+                        city: city,
+                        state: state,
+                        zip: zip,
                         email: email,
                         phone: phone,
                         card_type: card_type,

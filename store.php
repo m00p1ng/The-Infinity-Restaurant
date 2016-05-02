@@ -20,18 +20,15 @@ require_once("include/inc.php");
             $_SESSION['product_count'] = 0;
         }
         
+        if(!isset($_SESSION['product_id'])){
+            $_SESSION['product_id'] = array();
+        }
+        
 //        session_destroy();
         ?>
             <div id="wrap">
                 <div id="main">
-                    <div class="ui container">
-                        <div class="ui top bilboard test ad" data-text="">
-                            <div class="ui fluid image">
-                                <img src="http://placehold.it/800x150" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ui container pad-segment" id="shop">
+                    <div class="ui container pad-segment">
                         <div class="ui grid">
                             <div class="ui twelve wide column">
                                 <div class="ui segment">
@@ -90,7 +87,7 @@ require_once("include/inc.php");
                                         <br />
                                         <?php 
                                 if(isset($_SESSION['username'])){
-                                    echo "<a href='#' class='fluid ui red inverted button'>Check Out!!</a>";
+                                    echo "<a href='checkout.php' class='fluid ui red inverted button'>Check Out!!</a>";
                                 }
                                 else {
                                     echo "

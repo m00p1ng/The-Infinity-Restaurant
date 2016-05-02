@@ -14,14 +14,17 @@ if(isset($_GET['edit_id'])){
         $users = query("SELECT * FROM user WHERE UserID={$row['EmpUser']}");
         $user = fetch_array($users);
         $username = $user['Username'];
-        $address = $row['EmpAddress'];
         $phone = $row['EmpPhone'];
         $position = $row['EmpPosition'];
         $status = $row['EmpStatus'];
         $note = $row['EmpNote'];
         $email = $user['UserEmail'];
+        $street = $row['EmpStreet'];
+        $city = $row['EmpCity'];
+        $state = $row['EmpState'];
+        $zip = $row['EmpZip'];
         
-        echo $firstname . ".,." . $lastname . ".,." . $gender . ".,." . $birthday . ".,." . $username . ".,." . $address . ".,." . $phone . ".,." . $position . ".,." . $status . ".,." . $note . ".,." . $email;
+        echo $firstname . ".,." . $lastname . ".,." . $gender . ".,." . $birthday . ".,." . $username . ".,." . $phone . ".,." . $position . ".,." . $status . ".,." . $note . ".,." . $email . ".,." . $street . ".,." . $city . ".,." . $state . ".,." . $zip;
     }
     else {
         die();

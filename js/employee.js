@@ -55,14 +55,17 @@ function click_edit_employee() {
                 $('#show-dob-month').html(date[1]);
                 $('#show-dob-day').html(date[2]);
                 $('#edit-username').attr('value', data[4]);
-                $('#edit-address').attr('value', data[5]);
-                $('#edit-phone').attr('value', data[6]);
-                $('#edit-position').attr('value', data[7]);
-                $('#show-position').html(data[7]);
-                $('#edit-status').attr('value', data[8]);
-                $('#show-status').html(data[8]);
-                $('#edit-note').html(data[9]);
-                $('#edit-email').attr('value', data[10]);
+                $('#edit-phone').attr('value', data[5]);
+                $('#edit-position').attr('value', data[6]);
+                $('#show-position').html(data[6]);
+                $('#edit-status').attr('value', data[7]);
+                $('#show-status').html(data[7]);
+                $('#edit-note').html(data[8]);
+                $('#edit-email').attr('value', data[9]);
+                $('#edit-street').attr('value', data[10]);
+                $('#edit-city').attr('value', data[11]);
+                $('#edit-state').attr('value', data[12]);
+                $('#edit-zip').attr('value', data[13]);
             }
         });
 
@@ -81,6 +84,10 @@ function click_edit_employee() {
                 var position = $("#edit-position").val();
                 var status = $("#edit-status").val();
                 var note = $('#edit-note').val();
+                var street = $('#edit-street').val();
+                var city = $('#edit-city').val();
+                var state = $('#edit-state').val();
+                var zip = $('#edit-zip').val();
                 $.ajax({
                     type: 'POST',
                     url: 'include/query/edit_save_employee.php',
@@ -91,13 +98,16 @@ function click_edit_employee() {
                         dob_day: dob_day,
                         dob_month: dob_month,
                         dob_year: dob_year,
-                        address: address,
                         email: email,
                         phone: phone,
                         position: position,
                         status: status,
                         note: note,
-                        id: id
+                        id: id,
+                        street: street,
+                        city: city,
+                        state: state,
+                        zip: zip
                     },
                     cache: false,
                     success: function (value) {
@@ -132,12 +142,15 @@ function new_employee() {
                 var dob_day = $("#dob-day").val();
                 var dob_month = $("#dob-month").val();
                 var dob_year = $("#dob-year").val();
-                var address = $("#address").val();
                 var email = $("#email").val();
                 var phone = $("#phone").val();
                 var position = $("#position").val();
                 var status = $("#status").val();
                 var note = $('#note').val();
+                var street = $('#street').val();
+                var city = $('#city').val();
+                var state = $('#state').val();
+                var zip = $('#zip').val();
                 $.ajax({
                     type: 'POST',
                     url: 'include/query/add_save_employee.php',
@@ -151,12 +164,15 @@ function new_employee() {
                         dob_day: dob_day,
                         dob_month: dob_month,
                         dob_year: dob_year,
-                        address: address,
                         email: email,
                         phone: phone,
                         position: position,
                         status: status,
-                        note: note
+                        note: note,
+                        street: street,
+                        city: city,
+                        state: state,
+                        zip: zip
                     },
                     cache: false,
                     success: function (value) {

@@ -11,13 +11,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $dob_month = escape_string(clean($_POST['dob_month']));
     $dob_year = escape_string(clean($_POST['dob_year']));
     $birthday = $dob_year."-".$dob_month."-".$dob_day;
-    $address = escape_string(clean($_POST['address']));
     $email = escape_string(clean($_POST['email']));
     $phone = escape_string(clean($_POST['phone']));
     $position = escape_string(clean($_POST['position']));
     $status = escape_string(clean($_POST['status']));
     $note = escape_string(clean($_POST['note']));
     $id = escape_string(clean($_POST['id']));
+    $street = escape_string(clean($_POST['street']));
+    $city = escape_string(clean($_POST['city']));
+    $state = escape_string(clean($_POST['state']));
+    $zip = escape_string(clean($_POST['zip']));
 
     // Handling Firstname and Lastname
     if(empty($firstname)){
@@ -58,14 +61,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     else if(!checkdate($dob_month, $dob_day, $dob_year)){
         $errors[] = "Please enter valid birthday";
     }   
-
-    // Handling Address
-    if(empty($address)){
-        $errors[] = "Address cannot empty";
-    }
-    else if(strlen($address) < 10){
-        $errors[] = "Address cannot be less than 10 characters";
-    }
     
     if(empty($phone)){
         $errors[] = "Phone number cannot empty";
@@ -104,7 +99,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         <br />";
     }
     else{
-        $q = "UPDATE employee SET EmpFirstName='{$firstname}', EmpLastName='{$lastname}', EmpGender='{$gender}', EmpDOB='{$birthday}', EmpAddress='{$address}', EmpPhone='{$phone}', EmpPosition='{$position}', EmpStatus='{$status}', EmpNote='{$note}' WHERE EmpID={$id}";
+        $q = "UPDATE employee SET EmpFirstName='{$firstname}', EmpLastName='{$lastname}', EmpGender='{$gender}', EmpDOB='{$birthday}', EmpPhone='{$phone}', EmpPosition='{$position}', EmpStatus='{$status}', EmpNote='{$note}', EmpStreet='{$street}', EmpCity='{$city}', EmpState='{$state}', EmpZip='{$zip}' WHERE EmpID={$id}";
         
         $result = query($q);
         

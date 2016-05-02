@@ -171,7 +171,28 @@
             </div>
             <div class="field">
                 <label>Address</label>
-                <input type="text" id="address">
+            </div>
+            <div class="fields">
+                <div class="four wide field">
+                    <div class="field">
+                        <input type="text" name="street" id="street" placeholder="Street" required>
+                    </div>
+                </div>
+                <div class="four wide field">
+                    <div class="field">
+                        <input type="text" name="city" id="city" placeholder="City" required>
+                    </div>
+                </div>
+                <div class="five wide field">
+                    <div class="field">
+                        <input type="text" name="state" id="state" placeholder="State" required>
+                    </div>
+                </div>
+                <div class="three wide field">
+                    <div class="field">
+                        <input type="text" name="zip" id="zip" placeholder="Zip" required>
+                    </div>
+                </div>
             </div>
             <div class="nine wide field">
                 <div class="field">

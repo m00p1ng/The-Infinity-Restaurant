@@ -21,9 +21,9 @@ require_once("include/inc.php");
                                         <img src="src/march.jpg">
                                     </div>
                                     <div class="content">
-                                        <a class="header">Kristin Meenrattanakorn</a>
+                                        <a class="header">Krittin Meenrattanakorn</a>
                                         <div class="meta">
-                                            57105015522
+                                            5710501522
                                         </div>
                                         <div class="description">
                                             Database designer
@@ -46,7 +46,7 @@ require_once("include/inc.php");
                                 </div>
                                 <div class="ui card">
                                     <div class="image">
-                                        <img src="src/tam.jpg">
+                                        <img src="src/tam2.jpg">
                                     </div>
                                     <div class="content">
                                         <a class="header">Santitham Ananwattanaporn</a>

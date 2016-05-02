@@ -14,7 +14,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $dob_month = clean($_POST['dob_month']);
     $dob_year = clean($_POST['dob_year']);
     $birthday = $dob_year."-".$dob_month."-".$dob_day;
-    $address = clean($_POST['address']);
+    $street = clean($_POST['street']);
+    $city = clean($_POST['city']);
+    $state = clean($_POST['state']);
+    $zip = clean($_POST['zip']);
     $email = clean($_POST['email']);
     $phone = clean($_POST['phone']);
     $card_type = clean($_POST['card_type']);
@@ -91,21 +94,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     else if(!checkdate($dob_month, $dob_day, $dob_year)){
         $errors[] = "Please enter valid birthday";
     }   
-
-    // Handling Address
-    if(empty($address)){
-        $errors[] = "Address cannot empty";
-    }
-    else if(strlen($address) < 10){
-        $errors[] = "Address cannot be less than 10 characters";
-    }
-    
-    if(empty($phone)){
-        $errors[] = "Phone number cannot empty";
-    }
-    else if(strlen($phone) < 9){
-        $error[] = "Please enter valid number";
-    }
 
     if(empty($email)){
         $errors[] = "Email cannot empty";
@@ -189,7 +177,10 @@ function register_user($username, $password, $email){
     global $card_number;
     global $expire;
     global $gender;
-    global $address;
+    global $street;
+    global $city;
+    global $state;
+    global $zip;
     
     if(username_exist($username)){
         return false;
@@ -200,20 +191,23 @@ function register_user($username, $password, $email){
         $q .= "VALUES('$username', '$password', '$email', 'Customer')";
         $result = query($q);
         confirm($result);
-        information_user($firstname, $lastname, $gender, $birthday, $phone, $username, $address, $card_type, $card_number, $expire);
+        information_user($firstname, $lastname, $gender, $birthday, $phone, $username, $street, $city, $state, $zip, $card_type, $card_number, $expire);
     }
 }
 
-function information_user($firstname, $lastname, $gender, $dob, $phone, $username, $address, $credit_type, $credit_id, $expire){
+function information_user($firstname, $lastname, $gender, $birthday, $phone, $username, $street, $city, $state, $zip, $card_type, $card_number, $expire){
     $firstname = escape_string($firstname);
     $lastname = escape_string($lastname);
     $gender = escape_string($gender);
-    $dob = escape_string($dob);
+    $dob = escape_string($birthday);
     $phone = escape_string($phone);
     $username = escape_string($username);
-    $address = escape_string($address);
-    $credit_type = escape_string($credit_type);
-    $credit_id = escape_string($credit_id);
+    $street = escape_string($street);
+    $city =escape_string($city);
+    $state = escape_string($state);
+    $zip = escape_string($zip);
+    $credit_type = escape_string($card_type);
+    $credit_id = escape_string($card_number);
     $expire = escape_string($expire);
     
 
@@ -224,8 +218,8 @@ function information_user($firstname, $lastname, $gender, $dob, $phone, $usernam
     }
     $userid = $row['UserID'];
 
-    $q = "INSERT INTO customer(CustFirstName, CustLastname, CustGender, CustDOB, CustPhone, CustUser, CustAddress, CustCreditType, CustCreditID, CustCreditExp)";
-    $q .= " VALUES('$firstname', '$lastname', '$gender', '$dob', '$phone', '$userid', '$address', '$credit_type', '$credit_id', '$expire')";
+    $q = "INSERT INTO customer(CustFirstName, CustLastname, CustGender, CustDOB, CustPhone, CustUser, CustCreditType, CustCreditID, CustCreditExp, CustStreet, CustCity, CustState, CustZip)";
+    $q .= " VALUES('$firstname', '$lastname', '$gender', '$dob', '$phone', '$userid', '$credit_type', '$credit_id', '$expire', '$street', '$city', '$state', '$zip')";
     $result = query($q);
     confirm($result);
     

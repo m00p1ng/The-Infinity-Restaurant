@@ -58,7 +58,7 @@ require_once("include/inc.php");
                                                     <table class='ui celled table'>
                                                         <thead>
                                                             <tr>
-                                                                <th>Name</th>
+                                                                <th>Product name</th>
                                                                 <th>Amount</th>
                                                                 <th>Manufacture</th>
                                                                 <th>Cost</th>

@@ -33,6 +33,7 @@
                         <i class='left dropdown icon'></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Store
                         <div class='left menu'>
                             <a class='item' href='product.php'>Product</a>
+                            <a class='item' href='promotion.php'>Promotion</a>
                             <a class='item' href='import.php'>Import</a>
                             <a class='item' href='manufacture.php'>Manufacture</a>
                         </div>
